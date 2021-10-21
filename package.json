@@ -1,0 +1,36 @@
+{
+    "name": "remix",
+    "version": "1.0.0",
+    "description": "Great template to practice CSS transforms, light/dark toggles, and much more.",
+    "main": "index.js",
+    "scripts": {
+        "watch": "parcel index.html",
+        "build": "parcel build index.html",
+        "predeploy": "parcel build index.html --public-url ./",
+        "deploy": "gh-pages -d dist",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint:scss": "stylelint '**/*.{css,scss,sass}' --config .stylelintrc.json",
+        "fix:scss": "stylelint '**/*.{css,scss,sass}' --config .stylelintrc.json --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/splawskip/Remix.git"
+    },
+    "author": "psplawski.dev",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/splawskip/Remix/issues"
+    },
+    "homepage": "https://splawskip.github.io/Remix/",
+    "devDependencies": {
+        "@parcel/transformer-image": "^2.0.0",
+        "@parcel/transformer-sass": "^2.0.0",
+        "gh-pages": "^3.2.3",
+        "parcel": "^2.0.0",
+        "sass": "^1.39.0",
+        "stylelint": "^13.13.1",
+        "stylelint-config-recess-order": "^2.5.0",
+        "stylelint-config-standard": "^22.0.0",
+        "stylelint-scss": "^3.21.0"
+    }
+}
