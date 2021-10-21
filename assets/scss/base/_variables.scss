@@ -10,6 +10,7 @@
     --clr-arsenic: #41424E;
     --clr-lavender-gray: #C6C8CD;
     --clr-outer-space: #434450;
+    --gutter: 1rem;
 }
 // SCSS variables for breakpoints cuz CSS custom properties are not allowed in media directives.
 $brk-mobile: 414px;

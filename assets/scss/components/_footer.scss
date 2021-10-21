@@ -1,0 +1,105 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--clr-jonquil);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: var(--gutter);
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    &__title {
+        display: flex;
+        gap: .75rem;
+        align-items: center;
+        justify-content: flex-start;
+
+        &::before {
+            display: block;
+            width: 1.25rem;
+            height: 1.25rem;
+            content: '';
+            background-image: url('./../images/remix-logo-dark.svg');
+        }
+    }
+
+    &__desc {
+        margin-top: .75rem;
+    }
+
+    &__links {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 130px);
+        gap: 1.25rem;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    &__links-column {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        width: 100%;
+    }
+
+    &__link {
+        font-family: 'Inter', sans-serif;
+        font-size: .9rem;
+        line-height: 1.35rem;
+        color: var(--clr-dark-bronze);
+
+        &:first-of-type {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.2rem;
+        }
+    }
+
+    &__bar {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        background-color: var(--clr-dark-bronze);
+
+        &-container {
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+            justify-content: space-between;
+            padding: .5rem 1rem;
+        }
+    }
+
+    &__copyright {
+        margin-right: auto;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: .9rem;
+        font-weight: 600;
+        line-height: 1.15rem;
+        color: var(--clr-jonquil);
+    }
+
+    &__mail {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: .9rem;
+        font-weight: 500;
+        line-height: 1.15rem;
+        color: var(--clr-jonquil);
+        text-decoration: none;
+    }
+}

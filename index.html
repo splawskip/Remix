@@ -7,15 +7,81 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="./assets/scss/main.scss" />
-        <title>Remix</title>
+        <title>Remix | A figma plugin</title>
     </head>
     <body>
         <header></header>
         <main></main>
-        <footer></footer>
+        <footer class="footer">
+            <div class="container footer__container">
+                <section class="footer__text">
+                    <h5 class="footer__title">Remix</h5>
+                    <p class="footer__desc">
+                        Remix is a Figma and Sketch plugin that was made with
+                        Developers in mind. Create custom React components in
+                        seconds, copy CSS code in one click, and export your
+                        assets effortlessly.
+                    </p>
+                </section>
+                <section class="footer__links">
+                    <ul class="footer__links-column footer__support">
+                        <li class="footer__link">Supported</li>
+                        <li class="footer__link">Sketch</li>
+                        <li class="footer__link">Figma</li>
+                    </ul>
+                    <ul class="footer__links-column footer__development">
+                        <li class="footer__link">Developers</li>
+                        <li class="footer__link">API</li>
+                        <li class="footer__link">Documentation</li>
+                    </ul>
+                    <ul class="footer__links-column footer__company">
+                        <li class="footer__link">Company</li>
+                        <li class="footer__link">Career</li>
+                        <li class="footer__link">Support</li>
+                        <li class="footer__link">Culture</li>
+                    </ul>
+                </section>
+            </div>
+            <section class="footer__bar">
+                <div class="container footer__bar-container">
+                    <p class="footer__copyright">© Remix 2021</p>
+                    <a href="mailto:support@remix.com" class="footer__mail"
+                        >support@remix.com</a
+                    >
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0 12C0 5.3726 5.3726 0 12 0C18.6274 0 24 5.3726 24 12C24 18.6274 18.6274 24 12 24C5.3726 24 0 18.6274 0 12ZM11.6406 9.75375L11.6658 10.169L11.2461 10.1181C9.71845 9.92325 8.38385 9.26225 7.25065 8.15215L6.6967 7.60135L6.554 8.0081C6.2518 8.9148 6.44485 9.8724 7.0744 10.5164C7.41015 10.8723 7.3346 10.9232 6.75545 10.7113C6.554 10.6435 6.3777 10.5927 6.36095 10.6181C6.3022 10.6774 6.5036 11.4486 6.6631 11.7536C6.88135 12.1773 7.3262 12.5925 7.81305 12.8383L8.22435 13.0332L7.7375 13.0416C7.26745 13.0416 7.25065 13.0501 7.30105 13.2281C7.4689 13.7789 8.132 14.3636 8.87065 14.6179L9.3911 14.7958L8.9378 15.0669C8.2663 15.4567 7.4773 15.6771 6.6883 15.694C6.31055 15.7025 6 15.7364 6 15.7619C6 15.8465 7.02405 16.3211 7.62 16.5075C9.40785 17.0583 11.5315 16.8211 13.1263 15.8805C14.2594 15.211 15.3926 13.8806 15.9214 12.5926C16.2068 11.9061 16.4922 10.652 16.4922 10.0504C16.4922 9.66055 16.5173 9.6097 16.9874 9.1436C17.2644 8.87245 17.5246 8.57585 17.575 8.4911C17.6589 8.3301 17.6506 8.3301 17.2225 8.47415C16.509 8.7284 16.4082 8.6945 16.7608 8.31315C17.021 8.042 17.3316 7.5505 17.3316 7.40645C17.3316 7.381 17.2057 7.4234 17.063 7.49965C16.9119 7.5844 16.5762 7.7115 16.3243 7.7878L15.871 7.93185L15.4598 7.6522C15.2332 7.49965 14.9141 7.3302 14.7463 7.27935C14.3182 7.1607 13.6635 7.17765 13.2774 7.31325C12.2282 7.69455 11.5651 8.67755 11.6406 9.75375Z"
+                            fill="#F7CA18"
+                        />
+                    </svg>
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0 12C0 5.3726 5.3726 0 12 0C18.6274 0 24 5.3726 24 12C24 18.6274 18.6274 24 12 24C5.3726 24 0 18.6274 0 12ZM13.2508 19.0557V12.5271H15.0529L15.2918 10.2773H13.2508L13.2538 9.15125C13.2538 8.56445 13.3096 8.25005 14.1524 8.25005H15.279V6H13.4766C11.3116 6 10.5496 7.0914 10.5496 8.9268V10.2775H9.2V12.5274H10.5496V19.0557H13.2508Z"
+                            fill="#F7CA18"
+                        />
+                    </svg>
+                </div>
+            </section>
+        </footer>
     </body>
 </html>
