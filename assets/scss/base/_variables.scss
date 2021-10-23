@@ -1,6 +1,8 @@
 // CSS custom properties for colors variables.
 :root {
     font-size: 20px;
+    --clr-white: #FFFFFF;
+    --clr-black: #000000;
     --clr-gunmetal-dark: #1F2227;
     --clr-jonquil: #F7CA18;
     --clr-quick-silver: #A3A3A3;
@@ -15,4 +17,4 @@
 // SCSS variables for breakpoints cuz CSS custom properties are not allowed in media directives.
 $brk-mobile: 414px;
 $brk-tablet: 768px;
-$brk-desktop: 1440px;
+$brk-desktop: 1024px;

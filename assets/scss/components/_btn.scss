@@ -1,0 +1,15 @@
+.btn {
+    padding: 1rem 1.25rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+    line-height: 1.2rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: .25rem;
+
+    &--accent {
+        color: var(--clr-black);
+        background-color: var(--clr-jonquil);
+    }
+}
