@@ -12,4 +12,9 @@
         color: var(--clr-black);
         background-color: var(--clr-jonquil);
     }
+
+    &--dark {
+        color: var(--clr-white);
+        background-color: var(--clr-dark-bronze);
+    }
 }

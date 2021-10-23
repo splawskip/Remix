@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Remix | A figma plugin</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -11,11 +12,43 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="./assets/scss/main.scss" />
-        <title>Remix | A figma plugin</title>
     </head>
     <body>
         <header></header>
         <main>
+            <section class="guide">
+                <div class="container guide__container">
+                    <div class="guide__content">
+                        <h2 class="guide__heading">
+                            Get the Ultimate Developer Hand Off Guide
+                        </h2>
+                        <p class="guide__desc">
+                            A guide with 120+ hours worth of content to guide
+                            you on how to perfectly hand over your designs to
+                            your developers. Best part? It’s completely free.
+                        </p>
+                        <form action="#" class="guide__form">
+                            <label for="guide__email" class="guide__form-label"
+                                >Email:</label
+                            >
+                            <input
+                                type="email"
+                                name="guide__form-email"
+                                id="guide__form-email"
+                                placeholder="Enter email address"
+                                class="input input--email guide__form-email"
+                            />
+                            <button
+                                type="submit"
+                                class="guide__submit btn btn--dark"
+                            >
+                                Send me the guide
+                            </button>
+                        </form>
+                    </div>
+                    <div class="guide__ilustration"></div>
+                </div>
+            </section>
             <section class="subscription">
                 <div class="container subscription__container">
                     <article class="subscription__item">
