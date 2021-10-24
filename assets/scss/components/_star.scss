@@ -1,0 +1,23 @@
+.star {
+    color: transparent;
+
+    &::before {
+        color: var(--clr-jonquil);
+        content: '★';
+    }
+
+    &--mid {
+        width: 1.25rem;
+        height: 1.25rem;
+
+        &::before {
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+        }
+    }
+
+    &--small {
+        width: .5rem;
+        height: .5rem;
+    }
+}

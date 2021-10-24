@@ -1,0 +1,133 @@
+.testimonials {
+    display: grid;
+    place-items: center;
+    padding: 4rem 1rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        @media screen and (min-width: 1024px) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__cta {
+        @media screen and (min-width: 1024px) {
+            width: 50%;
+        }
+    }
+
+    &__desc {
+        margin-top: .5rem;
+    }
+
+    &__rating {
+        margin-top: .75rem;
+    }
+
+    &__score {
+        font-weight: 700;
+    }
+
+    &__users {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: .75rem;
+        overflow: hidden;
+
+        &-count {
+            font-weight: 700;
+        }
+
+        &:hover {
+            .testimonials__avatar {
+                &:not(:first-of-type) {
+                    margin: 0 2.5px;
+                }
+            }
+        }
+    }
+
+    &__avatar {
+        cursor: pointer;
+        border: 2px solid var(--clr-white);
+        border-radius: 50%;
+        transition: margin .1s ease-in-out;
+
+        &:first-of-type {
+            margin-left: .75rem;
+        }
+
+        &:not(:first-of-type) {
+            margin-left: -20px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        @media screen and (min-width: 1024px) {
+            width: 50%;
+        }
+    }
+}
+
+.testimonial {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 75%;
+    padding: 1rem 2rem;
+    background-color: var(--clr-cultured);
+    border-radius: 5px;
+
+    &__avatar {
+        position: absolute;
+        top: 25%;
+        left: -1.5rem;
+        max-width: 3rem;
+        max-height: 3rem;
+    }
+
+    &__review {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: .7rem;
+        font-weight: 400;
+        line-height: .9rem;
+        color: #595959;
+        quotes: '“' '”' '‘' '’';
+
+        &::before {
+            content: open-quote;
+        }
+
+        &::after {
+            content: close-quote;
+        }
+    }
+
+    &__author {
+        margin-top: .75rem;
+    }
+
+    &__rating {
+        margin-top: .25rem;
+    }
+
+    &:nth-child(odd) {
+        margin-left: 3rem;
+    }
+
+    &:nth-child(even) {
+        margin-left: auto;
+    }
+}
