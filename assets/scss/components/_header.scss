@@ -1,0 +1,64 @@
+.header {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100vw;
+
+    &__navigation {
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    &__hero {
+        margin-top: 4.75rem;
+        display:flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1.75rem;
+
+        @media screen and (min-width: 1024px) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__cta {
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        @media screen and (min-width: 1024px) {
+            width: 50%;
+        }
+    }
+
+    &__title {
+
+    }
+
+    &__desc {
+        margin-top: 1rem;
+    }
+
+    &__btn {
+        margin-top: 1.25rem;
+    }
+
+    &__image {
+        background-image: url('../images/hero-image--light.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+
+        @media screen and (min-width: 1024px) {
+            width: 50%;
+            background-size: auto;
+        }
+    }
+}

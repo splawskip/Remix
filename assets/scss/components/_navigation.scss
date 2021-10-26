@@ -1,0 +1,45 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.25rem;
+        width: 100%;
+
+        @media screen and (min-width: 1024px){
+            justify-content: flex-start;
+        }
+    }
+
+    &__item {
+        &--desktop-only {
+            @media screen and( max-width: 1024px) {
+                display: none;
+            }
+        }
+
+        &--mobile-only{
+            @media screen and(min-width: 1024px) {
+                display: none;
+            }
+        }
+
+        &--spacer {
+            margin-left: auto;
+        }
+    }
+
+    &__link {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: .9rem;
+        line-height: 1.15rem;
+        text-decoration: none;
+        color: #595959;
+    }
+}

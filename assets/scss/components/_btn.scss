@@ -7,6 +7,10 @@
     cursor: pointer;
     border: 0;
     border-radius: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
     &--accent {
         color: var(--clr-black);
@@ -16,5 +20,12 @@
     &--dark {
         color: var(--clr-white);
         background-color: var(--clr-dark-bronze);
+    }
+
+    &--figma {
+        &::before {
+            content: url('../images/figma-logo.svg');
+            margin-right: .75rem;
+        }
     }
 }
