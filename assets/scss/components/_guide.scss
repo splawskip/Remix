@@ -1,7 +1,7 @@
 .guide {
     display: grid;
     place-items: center;
-    background-color: var(--clr-jonquil);
+    background-color: var(--clr-accent);
 
     &__container {
         display: grid;
@@ -22,8 +22,13 @@
         margin-bottom: 2rem;
     }
 
+    &__heading {
+        color: var(--clr-black);
+    }
+
     &__desc {
         margin-top: .5rem;
+        color: var(--clr-alternative);
     }
 
     &__form {

@@ -1,31 +1,43 @@
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1rem 1.25rem;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: .9rem;
     font-weight: 700;
     line-height: 1.2rem;
+    text-align: center;
     cursor: pointer;
     border: 0;
     border-radius: .25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    transition: all .3s ease-in-out;
 
     &--accent {
         color: var(--clr-black);
-        background-color: var(--clr-jonquil);
+        background-color: var(--clr-accent);
+
+        &:hover {
+            background-color: var(--clr-accent-hover);
+            transition: all .3s ease-in-out;
+        }
     }
 
     &--dark {
         color: var(--clr-white);
-        background-color: var(--clr-dark-bronze);
+        background-color: var(--clr-alternative);
+
+        &:hover {
+            color: var(--clr-black);
+            background-color: var(--clr-alternative-hover);
+            transition: all .3s ease-in-out;
+        }
     }
 
     &--figma {
         &::before {
-            content: url('../images/figma-logo.svg');
             margin-right: .75rem;
+            content: url('../images/figma-logo.svg');
         }
     }
 }

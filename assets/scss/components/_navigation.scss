@@ -1,18 +1,18 @@
 .navigation {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
 
     &__items {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
         gap: 1.25rem;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
 
-        @media screen and (min-width: 1024px){
+        @media screen and (min-width: 1024px) {
             justify-content: flex-start;
         }
     }
@@ -24,7 +24,7 @@
             }
         }
 
-        &--mobile-only{
+        &--mobile-only {
             @media screen and(min-width: 1024px) {
                 display: none;
             }
@@ -39,7 +39,7 @@
         font-family: 'Space Grotesk', sans-serif;
         font-size: .9rem;
         line-height: 1.15rem;
-        text-decoration: none;
         color: #595959;
+        text-decoration: none;
     }
 }

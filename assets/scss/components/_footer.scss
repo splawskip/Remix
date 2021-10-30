@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: var(--clr-jonquil);
+    background-color: var(--clr-accent);
 
     &__container {
         display: flex;
@@ -26,6 +26,7 @@
         gap: .75rem;
         align-items: center;
         justify-content: flex-start;
+        color: var(--clr-black);
 
         &::before {
             display: block;
@@ -38,13 +39,15 @@
 
     &__desc {
         margin-top: .75rem;
+        color: var(--clr-alternative);
     }
 
     &__links {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: repeat(2, 130px);
+        display: flex;
+        flex-wrap: wrap;
         gap: 1.25rem;
+        align-content: flex-start;
+        align-items: flex-start;
         justify-content: space-between;
         width: 100%;
         margin-top: 2rem;
@@ -54,14 +57,13 @@
         display: flex;
         flex-direction: column;
         gap: .4rem;
-        width: 100%;
     }
 
     &__link {
         font-family: 'Inter', sans-serif;
         font-size: .9rem;
         line-height: 1.35rem;
-        color: var(--clr-dark-bronze);
+        color: var(--clr-alternative);
 
         &:first-of-type {
             font-size: 1rem;
@@ -74,7 +76,7 @@
         display: grid;
         place-items: center;
         width: 100%;
-        background-color: var(--clr-dark-bronze);
+        background-color: var(--clr-alternative);
 
         &-container {
             display: flex;
@@ -91,7 +93,7 @@
         font-size: .9rem;
         font-weight: 600;
         line-height: 1.15rem;
-        color: var(--clr-jonquil);
+        color: var(--clr-accent);
     }
 
     &__mail {
@@ -99,7 +101,20 @@
         font-size: .9rem;
         font-weight: 500;
         line-height: 1.15rem;
-        color: var(--clr-jonquil);
+        color: var(--clr-accent);
         text-decoration: none;
+    }
+
+    &__icon {
+        path {
+            transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+            path {
+                fill: var(--clr-white);
+                transition: all .3s ease-in-out;
+            }
+        }
     }
 }

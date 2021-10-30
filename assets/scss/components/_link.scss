@@ -1,0 +1,14 @@
+.link {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        color: var(--clr-accent);
+    }
+
+    &--on-accent {
+        &:hover {
+            color: var(--clr-white);
+        }
+    }
+}

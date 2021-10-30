@@ -87,6 +87,7 @@
     justify-content: flex-start;
     width: 75%;
     padding: 1rem 2rem;
+    color: var(--clr-pale-sky);
     background-color: var(--clr-cultured);
     border-radius: 5px;
 
@@ -103,7 +104,6 @@
         font-size: .7rem;
         font-weight: 400;
         line-height: .9rem;
-        color: #595959;
         quotes: '“' '”' '‘' '’';
 
         &::before {
@@ -129,5 +129,10 @@
 
     &:nth-child(even) {
         margin-left: auto;
+    }
+
+    &.dark-theme {
+        color: var(--clr-white);
+        background-color: var(--clr-outer-space);
     }
 }
