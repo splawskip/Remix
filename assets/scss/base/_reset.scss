@@ -104,3 +104,13 @@ input {
     -webkit-appearance: none;
     border-radius: 0;
 }
+
+a,
+input,
+button,
+select,
+textarea {
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+}

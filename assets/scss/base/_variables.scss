@@ -1,12 +1,15 @@
 // CSS custom properties for colors variables.
 :root {
+    // Typography.
     --font-size: 20px;
+    // Colors.
     --clr-white: #FFFFFF;
     --clr-black: #000000;
     --clr-accent: #F7CA18;
     --clr-accent-hover: #FFE580;
     --clr-alternative: #413906;
     --clr-alternative-hover: #9D9664;
+    --clr-scorpion: #595959;
     --clr-gunmetal-dark: #1F2227;
     --clr-quick-silver: #A3A3A3;
     --clr-cultured: #F5F6F8;
@@ -15,7 +18,19 @@
     --clr-lavender-gray: #C6C8CD;
     --clr-outer-space: #434450;
     --clr-pale-sky: #70757C;
+    --clr-alto: #DCDCDC;
+    --clr-focus: #51A7E8;
     --gutter: 1rem;
+    // Theme specific colors.
+    --clr-bg: var(--clr-white);
+    --clr-text-primary: var(--clr-black);
+    --clr-text-secondary: var(--clr-scorpion);
+
+    &.dark-theme {
+        --clr-bg: var(--clr-gunmetal-dark);
+        --clr-text-primary: var(--clr-lavender-gray);
+        --clr-text-secondary: var(--clr-quick-silver);
+    }
 }
 // SCSS variables for breakpoints cuz CSS custom properties are not allowed in media directives.
 $brk-mobile: 414px;

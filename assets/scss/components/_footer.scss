@@ -117,4 +117,9 @@
             }
         }
     }
+
+    ::selection {
+        color: var(--clr-accent);
+        background-color: var(--clr-black);
+    }
 }

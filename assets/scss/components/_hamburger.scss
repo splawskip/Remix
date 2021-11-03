@@ -5,16 +5,9 @@
     background-color: transparent;
     border: 0;
 
-    &:focus {
+    &:focus-visible {
         & > .hamburger__container {
-            box-shadow: 0 0 2px 2px #51A7E8;
-        }
-    }
-
-    &,
-    &__container {
-        &:focus {
-            outline: none;
+            box-shadow: 0 0 2px 2px var(--clr-focus);
         }
     }
 
@@ -29,8 +22,8 @@
     &__bars {
         position: absolute;
         width: 35px;
-        height: 2px;
-        background-color: #000;
+        height: 5px;
+        background-color: var(--clr-text-primary);
         transition: transform 220ms ease-in-out;
 
         &::before,
@@ -38,9 +31,9 @@
             position: absolute;
             display: block;
             width: 35px;
-            height: 2px;
+            height: 5px;
             content: '';
-            background-color: #000;
+            background-color: var(--clr-text-primary);
         }
 
         &::before {

@@ -11,29 +11,20 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: rgba(#000, 0);
     -webkit-font-smoothing: subpixel-antialiased;
+
+    ::selection {
+        color: var(--clr-black);
+        background-color: var(--clr-accent);
+    }
 }
 
 .body {
     display: grid;
     place-items: center;
+    background-color: var(--clr-bg);
 }
 
 .page {
     width: 100%;
 }
 
-// Dark theme styles.
-.dark-theme {
-    color: var( --clr-lavender-gray);
-    background-color: var(--clr-gunmetal-dark);
-
-    .logo-text {
-        fill: var(--clr-white);
-    }
-
-    p[class*='desc'] {
-        &:not(.on-accent) {
-            color: var(--clr-quick-silver);
-        }
-    }
-}

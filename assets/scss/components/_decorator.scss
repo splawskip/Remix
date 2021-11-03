@@ -1,0 +1,53 @@
+.decorator {
+    &--arrow {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: .15rem 0 0 .35rem;
+
+        &::before {
+            display: inline-block;
+            width: .75rem;
+            height: 4px;
+            content: '';
+            background: currentColor;
+            transition: width .3s ease-in-out;
+        }
+
+        &::after {
+            display: inline-block;
+            padding: 4px;
+            margin-left: -10px;
+            content: '';
+            border: solid currentColor;
+            border-width: 0 4px 4px 0;
+            transform: rotate(-45deg);
+        }
+
+        &:hover {
+            &::before {
+                width: 1.25rem;
+                transition: width .3s ease-in-out;
+            }
+        }
+    }
+
+    &--figma-selected {
+        position: relative;
+        padding: 0 .5rem;
+        border-color: var(--clr-accent);
+        border-style: solid;
+        border-width: 2px;
+        border-image: url('../images/figma-selected.png') 16 / 9;
+
+        &::after {
+            position: absolute;
+            right: -1.75rem;
+            bottom: -.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            content: url('../images/figma-cursor.png');
+        }
+    }
+}

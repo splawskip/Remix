@@ -19,6 +19,7 @@
     }
 
     &__item {
+        color: var(--clr-text-secondary);
         background-color: transparent;
 
         &--highlighted {
@@ -26,6 +27,14 @@
             color: var( --clr-lavender-gray);
             background-color: var(--clr-outer-space);
             border-radius: .5rem;
+
+            .subscription__desc {
+                color: var( --clr-lavender-gray);
+            }
+
+            .subscription__price {
+                color: var( --clr-lavender-gray);
+            }
         }
 
         @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -58,6 +67,10 @@
         }
     }
 
+    &__heading {
+        color: inherit;
+    }
+
     &__desc {
         margin-top: .5rem;
     }
@@ -75,6 +88,7 @@
         font-family: 'Space Grotesk', sans-serif;
         font-size: .9rem;
         line-height: 1.1rem;
+        color: inherit;
 
         &:not(:first-of-type) {
             margin-top: .75rem;
