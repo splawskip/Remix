@@ -1,0 +1,2 @@
+const themeSwitch=document.querySelector("#theme-switch__input"),headerImage=document.querySelector(".header__image");themeSwitch.addEventListener("change",(()=>{document.documentElement.classList.toggle("dark-theme"),headerImage.classList.toggle("dark-theme")})),window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches&&(themeSwitch.dispatchEvent(new Event("change")),themeSwitch.checked=!0);
+//# sourceMappingURL=index.400aef20.js.map
