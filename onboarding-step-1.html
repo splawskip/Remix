@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Remix | A figma plugin</title>
+    </head>
+</head>
+<body>
+    <article id="swup" class="popup__step transition-fade">
+        <h6 class="popup__heading">
+            Set up your Remix Environment
+        </h6>
+        <p class="popup__desc">
+            This will take less than a minute, we use this
+            information to customize Remix for you;
+        </p>
+        <label
+            for="personal"
+            data-desc="I’m using this for a team of <2."
+            class="popup__subscription"
+        >
+            Personal Use
+            <input
+                type="radio"
+                name="subscription"
+                id="personal"
+                class="popup__radio"
+            />
+        </label>
+        <label
+            for="corporate"
+            data-desc="I’m using this for a team of >2."
+            class="popup__subscription"
+        >
+            Corporate Use
+            <input
+                type="radio"
+                name="subscription"
+                id="corporate"
+                class="popup__radio"
+            />
+        </label>
+        <a href="#" class="btn btn--transparent popup__btn">
+            Previous
+        </button>
+        <a href="onboarding-step-2.html" class="btn btn--accent popup__btn" data-swup-preload>Next</button>
+    </article>
+</body>
+</html>

@@ -88,7 +88,7 @@
                         Step <span class="current-step">1</span>/3
                     </p>
                 </header>
-                <article class="popup__step">
+                <article id="swup" class="popup__step transition-fade">
                     <h6 class="popup__heading">
                         Set up your Remix Environment
                     </h6>
@@ -107,6 +107,7 @@
                             name="subscription"
                             id="personal"
                             class="popup__radio"
+                            checked
                         />
                     </label>
                     <label
@@ -122,10 +123,10 @@
                             class="popup__radio"
                         />
                     </label>
-                    <button class="btn btn--transparent popup__btn">
+                    <a href="#" class="btn btn--transparent popup__btn popup__close">
                         Previous
                     </button>
-                    <button class="btn btn--accent popup__btn">Next</button>
+                    <a href="onboarding-step-2.html" class="btn btn--accent popup__btn" data-swup-preload>Next</button>
                 </article>
                 <footer class="popup__copyright">
                     © 2021 Remix. All Rights Reserved.

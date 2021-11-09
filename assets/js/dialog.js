@@ -1,8 +1,4 @@
 import dialogPolyfill from 'dialog-polyfill'; // Get dialog polyfill cuz Safari and FF does not support it.
-
-// Get all onboarding btns.
-const onboardingBtns = document.querySelectorAll('.btn--figma');
-
 // Register popup with polyfill.
 const registerPopup = (popupSelector = '.onboarding__popup') => {
 	// Get our dialog element.
@@ -12,14 +8,16 @@ const registerPopup = (popupSelector = '.onboarding__popup') => {
 	// Return our dialog element.
 	return dialog;
 }
-
 // Handle onboarding.
-export const handleOnboarding = () => {
-	// Grab our popup.
+export const handleOnboardingPopup = () => {
+	// Get all onboarding btns.
+	const showBtns = document.querySelectorAll('.btn--figma');
+	const closeBtns = document.querySelectorAll('.popup__close');
+	// Register popup and get the element.
 	const onboardingPopup = registerPopup();
-	//
-	onboardingBtns.forEach(onboardingBtn => {
-		onboardingBtn.addEventListener('click', onboardingPopup.showModal);
-	});
+	// Attach open event on all figma buttons.
+	showBtns.forEach(showBtn => showBtn.addEventListener('click', onboardingPopup.showModal));
+	// Attach close event.
+	closeBtns.forEach(closeBtn => closeBtn.addEventListener('click', onboardingPopup.close));
 }
 

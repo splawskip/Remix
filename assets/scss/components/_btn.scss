@@ -8,6 +8,7 @@
     font-weight: 700;
     line-height: 1.2rem;
     text-align: center;
+    text-decoration: none;
     cursor: pointer;
     border: 0;
     border-radius: .25rem;
@@ -83,6 +84,13 @@
         &::before {
             margin-right: .75rem;
             content: url('../images/figma-logo.svg');
+        }
+    }
+
+    &--send {
+        &::before {
+            margin-right: .75rem;
+            content: url('../images/send.svg');
         }
     }
 }

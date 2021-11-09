@@ -72,6 +72,15 @@
         margin-top: 1.75rem;
     }
 
+    &__dynamic {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 2rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
     &__heading {
         width: 100%;
         text-align: center;
@@ -154,6 +163,41 @@
         }
     }
 
+    &__figma-link {
+        width: 100%;
+        margin-top: 1.25rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1.5rem;
+
+        &-email {
+            width: 100%;
+            margin-top: .75rem;
+
+            @media screen and (min-width: 768px) {
+                width: calc(50% - 1rem);
+                margin-top: 1.5rem;
+            }
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        margin-top: .75rem;
+
+        @media screen and (min-width: 768px) {
+            width: calc(50% - 1rem);
+            margin-top: 1.5rem;
+        }
+    }
+
     &__btn {
         width: 100%;
         margin-top: .75rem;
@@ -172,4 +216,13 @@
         color: var(--clr-scorpion);
         text-align: center;
     }
+}
+
+.transition-fade {
+    opacity: 1;
+    transition: .4s;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
 }
