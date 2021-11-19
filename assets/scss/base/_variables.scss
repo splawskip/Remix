@@ -22,12 +22,14 @@
     --clr-focus: #51A7E8;
     --gutter: 1rem;
     // Theme specific colors.
-    --clr-bg: var(--clr-white);
+    --clr-bg-primary: var(--clr-white);
+    --clr-bg-secondary: var(--clr-cultured);
     --clr-text-primary: var(--clr-black);
     --clr-text-secondary: var(--clr-scorpion);
-
+    // Dark theme specific.
     &.dark-theme {
-        --clr-bg: var(--clr-gunmetal-dark);
+        --clr-bg-primary: var(--clr-gunmetal-dark);
+        --clr-bg-secondary: var(--clr-arsenic);
         --clr-text-primary: var(--clr-lavender-gray);
         --clr-text-secondary: var(--clr-quick-silver);
     }

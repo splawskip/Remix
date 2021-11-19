@@ -123,16 +123,16 @@
         margin-top: .25rem;
     }
 
+    &.dark-theme {
+        color: var(--clr-white);
+        background-color: var(--clr-outer-space);
+    }
+
     &:nth-child(odd) {
         margin-left: 3rem;
     }
 
     &:nth-child(even) {
         margin-left: auto;
-    }
-
-    &.dark-theme {
-        color: var(--clr-white);
-        background-color: var(--clr-outer-space);
     }
 }
