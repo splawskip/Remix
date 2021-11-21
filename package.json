@@ -10,7 +10,9 @@
         "deploy": "gh-pages -d dist",
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint:scss": "stylelint '**/*.{css,scss,sass}' --config .stylelintrc.json",
-        "fix:scss": "stylelint '**/*.{css,scss,sass}' --config .stylelintrc.json --fix"
+        "fix:scss": "stylelint '**/*.{css,scss,sass}' --config .stylelintrc.json --fix",
+        "lint:js": "eslint .",
+        "fix:js": "eslint --fix ."
     },
     "repository": {
         "type": "git",
@@ -25,7 +27,9 @@
     "devDependencies": {
         "@parcel/transformer-image": "^2.0.0",
         "@parcel/transformer-sass": "^2.0.0",
-        "dialog-polyfill": "^0.5.6",
+        "eslint": "^8.3.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.3",
         "gh-pages": "^3.2.3",
         "parcel": "^2.0.0",
         "sass": "^1.39.0",
@@ -37,6 +41,7 @@
     "dependencies": {
         "@swup/a11y-plugin": "^2.0.0",
         "@swup/preload-plugin": "^1.0.3",
+        "dialog-polyfill": "^0.5.6",
         "swup": "^2.0.14"
     }
 }
