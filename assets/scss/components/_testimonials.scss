@@ -1,3 +1,5 @@
+@use '../utils';
+
 .testimonials {
     display: grid;
     place-items: center;
@@ -8,13 +10,13 @@
         flex-direction: column;
         gap: 1.5rem;
 
-        @media screen and (min-width: 1024px) {
+        @include utils.display-breakpoint-l-and-up {
             flex-direction: row-reverse;
         }
     }
 
     &__cta {
-        @media screen and (min-width: 1024px) {
+        @include utils.display-breakpoint-l-and-up {
             width: 50%;
         }
     }
@@ -73,7 +75,7 @@
         align-items: flex-start;
         justify-content: flex-start;
 
-        @media screen and (min-width: 1024px) {
+        @include utils.display-breakpoint-l-and-up {
             width: 50%;
         }
     }

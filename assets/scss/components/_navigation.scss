@@ -1,3 +1,5 @@
+@use '../utils';
+
 .navigation {
     display: flex;
     flex-direction: row;
@@ -19,7 +21,7 @@
             justify-content: flex-start;
         }
 
-        @media screen and (min-width: 1024px) {
+        @include utils.display-breakpoint-l-and-up {
             justify-content: flex-start;
         }
     }
@@ -27,13 +29,13 @@
     &__item {
 
         &--desktop-only {
-            @media screen and(max-width: 1024px) {
+            @include utils.display-breakpoint-m-and-down {
                 display: none;
             }
         }
 
         &--mobile-only {
-            @media screen and(min-width: 1024px) {
+            @include utils.display-breakpoint-l-and-up {
                 display: none;
             }
         }
@@ -58,7 +60,7 @@
         background-color: var(--clr-bg-primary);
         opacity: 0;
 
-        @media screen and(min-width: 1024px) {
+        @include utils.display-breakpoint-l-and-up {
             display: none;
         }
     }

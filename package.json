@@ -32,11 +32,12 @@
         "eslint-plugin-import": "^2.25.3",
         "gh-pages": "^3.2.3",
         "parcel": "^2.0.0",
+        "postcss-scss": "^4.0.2",
+        "prettier": "^2.4.1",
         "sass": "^1.39.0",
-        "stylelint": "^13.13.1",
-        "stylelint-config-recess-order": "^2.5.0",
-        "stylelint-config-standard": "^22.0.0",
-        "stylelint-scss": "^3.21.0"
+        "stylelint": "^14.1.0",
+        "stylelint-config-recess-order": "^3.0.0",
+        "stylelint-scss": "^4.0.0"
     },
     "dependencies": {
         "@swup/a11y-plugin": "^2.0.0",

@@ -1,0 +1,80 @@
+// Define our breakpoints.
+$breakpoints: (
+    s       : 414px,
+    m       : 768px,
+    l       : 1024px,
+) !default;
+
+// Create handy media-breakpoints map.
+$media-breakpoints: (
+    s: (
+        'only': 'only screen and ( min-width: #{map-get($breakpoints, 's')} ) and ( max-width: #{map-get($breakpoints, 'm') - 1} )',
+        'and-down': 'only screen and ( max-width: #{map-get($breakpoints, 'm') - 1} )',
+        'and-up': 'only screen and ( min-width: #{map-get($breakpoints, 's')} )'
+    ),
+    m: (
+        'only': 'only screen and (min-width: #{map-get($breakpoints, 'm')}) and (max-width: #{map-get($breakpoints, 'l') - 1})',
+        'and-down': 'only screen and (max-width: #{map-get($breakpoints, 'l') - 1})',
+        'and-up': 'only screen and (min-width: #{map-get($breakpoints, 'm')})',
+    ),
+    l: (
+        'only': 'only screen and (min-width: #{map-get($breakpoints, 'l')}) and (max-width: #{map-get($breakpoints, 'xl') - 1})',
+        'and-down': 'only screen and (max-width: #{map-get($breakpoints, 'xl') - 1})',
+        'and-up': 'only screen and (min-width: #{map-get($breakpoints, 'l')})',
+    ),
+);
+
+// Create our media breakpoints.
+@mixin display-breakpoint-s-only {
+    @media #{map-get(map-get($media-breakpoints, s), only)} {
+        @content;
+    }
+}
+
+@mixin display-breakpoint-s-and-down {
+    @media #{map-get(map-get($media-breakpoints, s), and-down)} {
+        @content;
+    }
+}
+
+@mixin display-breakpoint-s-and-up {
+    @media #{map-get(map-get($media-breakpoints, s), and-up)} {
+        @content;
+    }
+}
+
+@mixin display-breakpoint-m-only {
+    @media #{map-get(map-get($media-breakpoints, m), only)} {
+        @content;
+    }
+}
+
+@mixin display-breakpoint-m-and-down {
+    @media #{map-get(map-get($media-breakpoints, m), and-down)} {
+        @content;
+    }
+}
+
+@mixin display-breakpoint-m-and-up {
+    @media #{map-get(map-get($media-breakpoints, m), and-up)} {
+        @content;
+    }
+}
+
+@mixin display-breakpoint-l-only {
+    @media #{map-get(map-get($media-breakpoints, l), only)} {
+        @content;
+    }
+}
+
+@mixin display-breakpoint-l-and-down {
+    @media #{map-get(map-get($media-breakpoints, l), and-down)} {
+        @content;
+    }
+}
+
+@mixin display-breakpoint-l-and-up {
+    @media #{map-get(map-get($media-breakpoints, l), and-up)} {
+        @content;
+    }
+}

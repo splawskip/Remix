@@ -1,3 +1,5 @@
+@use '../utils';
+
 .subscription {
     display: grid;
     place-items: center;
@@ -10,7 +12,7 @@
         justify-content: flex-start;
         padding: 4rem var(--gutter);
 
-        @media screen and (min-width: 768px) {
+        @include utils.display-breakpoint-m-and-up {
             flex-direction: row;
             flex-wrap: wrap;
             align-items: center;
@@ -37,7 +39,7 @@
             }
         }
 
-        @media screen and (min-width: 768px) and (max-width: 1024px) {
+        @include utils.display-breakpoint-m-only {
             order: 0;
             width: calc(50% - 2rem);
 
@@ -47,7 +49,7 @@
             }
         }
 
-        @media screen and (min-width: 1024px) {
+        @include utils.display-breakpoint-l-and-up {
             width: calc(100% / 3 - 2rem);
         }
     }

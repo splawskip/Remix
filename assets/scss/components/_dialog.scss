@@ -1,3 +1,5 @@
+@use '../utils';
+
 .popup {
     display: flex;
     flex-direction: column;
@@ -25,7 +27,7 @@
             font-size: 1rem;
             font-weight: 700;
 
-            @media screen and (min-width: 768px) {
+            @include utils.display-breakpoint-m-and-up {
                 display: block;
             }
         }
@@ -45,11 +47,11 @@
         margin-top: 2.5rem;
         background-color: var(--clr-bg-secondary);
 
-        @media screen and (min-width: 1024px) {
+        @include utils.display-breakpoint-l-and-up {
             margin-top: 4rem;
         }
 
-        @media screen and (min-width: 768px) {
+        @include utils.display-breakpoint-m-and-up {
             height: auto;
         }
     }
@@ -130,7 +132,7 @@
             box-shadow: 0 0 3px 3px var(--clr-focus);
         }
 
-        @media screen and (min-width: 768px) {
+        @include utils.display-breakpoint-m-and-up {
             width: calc(50% - 1rem);
             margin-top: 2rem;
         }
@@ -187,7 +189,7 @@
             width: 100%;
             margin-top: .75rem;
 
-            @media screen and (min-width: 768px) {
+            @include utils.display-breakpoint-m-and-up {
                 width: calc(50% - 1rem);
                 margin-top: 1.5rem;
             }
@@ -198,7 +200,7 @@
         width: 100%;
         margin-top: .75rem;
 
-        @media screen and (min-width: 768px) {
+        @include utils.display-breakpoint-m-and-up {
             width: calc(50% - 1rem);
             margin-top: 1.5rem;
         }
@@ -208,7 +210,7 @@
         width: 100%;
         margin-top: .75rem;
 
-        @media screen and (min-width: 768px) {
+        @include utils.display-breakpoint-m-and-up {
             width: calc(50% - 1rem);
             margin-top: 1.5rem;
         }
