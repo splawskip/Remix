@@ -225,12 +225,3 @@
         text-align: center;
     }
 }
-
-.transition-fade {
-    opacity: 1;
-    transition: .4s;
-}
-
-html.is-animating .transition-fade {
-    opacity: 0;
-}

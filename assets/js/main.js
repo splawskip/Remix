@@ -4,7 +4,7 @@ import SwupPreloadPlugin from '@swup/preload-plugin';
 import SwupA11yPlugin from '@swup/a11y-plugin';
 // Load our local modules.
 import { handleThemeSwitch } from './theme-switch';
-import { handleOnboardingPopup } from './dialog';
+import { handleOnboardingPopup } from './onboarding';
 import { handleHamburgerMenu } from './hamburger';
 // Get hamburger toggle.
 const hamburger = document.querySelector('button.hamburger');
@@ -23,6 +23,7 @@ const swup = new Swup( // eslint-disable-line
     ],
   },
 );
+// Run the app.
 handleThemeSwitch();
 handleOnboardingPopup();
 hamburger.addEventListener('click', handleHamburgerMenu);

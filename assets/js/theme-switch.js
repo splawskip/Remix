@@ -2,10 +2,11 @@
 const themeSwitches = document.querySelectorAll('.theme-switch__input');
 // Get all elements affected by theme-switcher.
 const headerImage = document.querySelector('.header__image');
+const htmlElement = document.documentElement;
+// Create iterator for color-scheme.
+let once = true;
 // Handle the theme-switch behav.
 export const handleThemeSwitch = () => {
-  // Create iterator for color-scheme.
-  let once = true;
   // For every theme-switch.
   themeSwitches.forEach((themeSwitch, i, array) => {
     // Cache variables.
@@ -16,7 +17,7 @@ export const handleThemeSwitch = () => {
     // Attach event listener that on change will toggle dark-theme class.
     currentThemeSwitch.addEventListener('change', () => {
       // Apply dark-theme class to the places where it is needed.
-      document.documentElement.classList.toggle('dark-theme');
+      htmlElement.classList.toggle('dark-theme');
       headerImage.classList.toggle('dark-theme');
       // Change state of other theme-switches.
       otherSwitches.forEach((otherSwitch) => {
@@ -38,6 +39,7 @@ export const handleThemeSwitch = () => {
       once
         && window.matchMedia
         && window.matchMedia('(prefers-color-scheme: dark)').matches
+        && !htmlElement.classList.contains('dark-theme')
     ) {
       currentThemeSwitch.dispatchEvent(new Event('change'));
       currentThemeSwitch.checked = true;
