@@ -10,10 +10,10 @@ Remix is a great template to practice CSS transforms, light/dark toggles, and mu
 2. CSS
 3. SCSS
 4. Vanilla JS
-5. Swup - Page transition lib.
+5. [Swup](https://swup.js.org/) - Page transition lib.
 
 ## Tools used:
 
-1. Parcel
-2. StyleLint - My own config
-3. ESLINT - AIRBNB Config
+1. [Parcel](https://parceljs.org/)
+2. [StyleLint](https://stylelint.io/) - My own config
+3. [ESLINT](https://eslint.org/) - [AIRBNB Config](https://github.com/airbnb/javascript)
