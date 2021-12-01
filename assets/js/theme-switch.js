@@ -36,8 +36,8 @@ export const handleThemeSwitch = () => {
     // If OS of the user prefers dark color theme simulate the change event.
     if (
       once
-      && window.matchMedia
-      && window.matchMedia('(prefers-color-scheme: dark)').matches
+        && window.matchMedia
+        && window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
       currentThemeSwitch.dispatchEvent(new Event('change'));
       currentThemeSwitch.checked = true;

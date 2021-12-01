@@ -2,7 +2,6 @@
     "name": "remix",
     "version": "1.0.0",
     "description": "Great template to practice CSS transforms, light/dark toggles, and much more.",
-    "main": "./assets/js/main.js",
     "scripts": {
         "watch": "parcel index.html",
         "build": "parcel build index.html",

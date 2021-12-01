@@ -10,7 +10,7 @@
         gap: 2rem;
         align-items: center;
         justify-content: flex-start;
-        padding: 4rem var(--gutter);
+        padding: 4rem 1rem;
 
         @include utils.display-breakpoint-m-and-up {
             flex-direction: row;
