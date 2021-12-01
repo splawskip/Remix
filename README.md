@@ -11,6 +11,7 @@ Remix is a great template to practice CSS transforms, light/dark toggles, and mu
 3. SCSS
 4. Vanilla JS
 5. [Swup](https://swup.js.org/) - Page transition lib.
+6. [Dialog-Polyfill](https://github.com/GoogleChrome/dialog-polyfill) - polyfill for `<dialog>` and `<form method="dialog">`.
 
 ## Tools used:
 
