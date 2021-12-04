@@ -23,6 +23,9 @@ const swup = new Swup( // eslint-disable-line
     ],
   },
 );
+window.addEventListener('scroll', () => {
+  document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+});
 // Run the app.
 handleThemeSwitch();
 handleOnboardingPopup();
