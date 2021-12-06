@@ -17,15 +17,13 @@ const swup = new Swup( // eslint-disable-line
           contentSelector: '.popup__step',
           headingSelector: 'h6',
         },
-
       ),
       new SwupPreloadPlugin(),
     ],
   },
 );
-window.addEventListener('scroll', () => {
-  document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
-});
+// Help our dialog lock body scroll.
+window.addEventListener('scroll', () => document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`));
 // Run the app.
 handleThemeSwitch();
 handleOnboardingPopup();

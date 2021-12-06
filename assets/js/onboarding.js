@@ -21,6 +21,5 @@ export const handleOnboardingPopup = () => {
   // Allow body to scroll on escape key.
   document.addEventListener('keyup', (e) => (e.key === 'Escape' ? allowBodyScroll() : false));
 };
-
 // Spit it out.
 export default handleOnboardingPopup;
