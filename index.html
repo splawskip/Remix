@@ -1,671 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Remix | A figma plugin</title>
-        <link
-            rel="shortcut icon"
-            href="./assets/images/favicon.ico"
-            type="image/x-icon"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="./node_modules/dialog-polyfill/dist/dialog-polyfill.css"
-        />
-        <link rel="stylesheet" href="./assets/scss/main.scss" />
-    </head>
-    <body class="body">
-        <dialog class="popup onboarding__popup fixed">
-            <aside class="popup__controls">
-                <button
-                    class="btn btn--tone-dark btn--rounded-arrow popup__close"
-                ></button>
-                <p class="popup__close-label">Back to homepage</p>
-                <div class="theme-switch popup__theme-switch">
-                    <input
-                        type="checkbox"
-                        id="theme-switch__input"
-                        class="theme-switch__input"
-                    />
-                    <label
-                        for="theme-switch__input"
-                        class="theme-switch__label"
-                    >
-                        <div class="theme-switch__icon">
-                            <img
-                                src="./assets/images/sun.svg"
-                                alt="Light Theme"
-                                class="theme-light"
-                            />
-                            <p>Light</p>
-                        </div>
-                        <div class="theme-switch__icon">
-                            <img
-                                src="./assets/images/moon.svg"
-                                alt="Dark Theme"
-                                class="theme-dark"
-                            />
-                            <p>Dark</p>
-                        </div>
-                        <div class="theme-switch__toggle"></div>
-                    </label>
-                </div>
-            </aside>
-            <section id="swup" class="transition-fade popup__content">
-                <header class="popup__header">
-                    <a href="#" rel="noopener noreferrer" class="link popup__link">
-                        <svg
-                            width="99"
-                            height="26"
-                            viewBox="0 0 99 26"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="logo popup__logo"
-                        >
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remix | A figma plugin</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./node_modules/dialog-polyfill/dist/dialog-polyfill.css" />
+    <link rel="stylesheet" href="./assets/scss/main.scss" />
+</head>
+<body class="body">
+    <dialog class="popup onboarding__popup fixed">
+        <aside class="popup__controls">
+            <button class="btn btn--tone-dark btn--rounded-arrow popup__close"></button>
+            <p class="popup__close-label">Back to homepage</p>
+            <div class="theme-switch popup__theme-switch">
+                <input type="checkbox" id="theme-switch__input" class="theme-switch__input" />
+                <label for="theme-switch__input" class="theme-switch__label">
+                    <div class="theme-switch__icon">
+                        <img src="./assets/images/sun.svg" alt="Light Theme" class="theme-light" />
+                        <p>Light</p>
+                    </div>
+                    <div class="theme-switch__icon">
+                        <img src="./assets/images/moon.svg" alt="Dark Theme" class="theme-dark" />
+                        <p>Dark</p>
+                    </div>
+                    <div class="theme-switch__toggle"></div>
+                </label>
+            </div>
+        </aside>
+        <section id="swup" class="transition-fade popup__content">
+            <header class="popup__header">
+                <a href="#" rel="noopener noreferrer" class="link popup__link">
+                    <svg width="99" height="26" viewBox="0 0 99 26" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="logo popup__logo">
+                        <path
+                            d="M41.32 20V6H47.4C48.28 6 49.0467 6.15333 49.7 6.46C50.3533 6.76667 50.86 7.2 51.22 7.76C51.58 8.32 51.76 8.98 51.76 9.74V9.98C51.76 10.82 51.56 11.5 51.16 12.02C50.76 12.54 50.2667 12.92 49.68 13.16V13.52C50.2133 13.5467 50.6267 13.7333 50.92 14.08C51.2133 14.4133 51.36 14.86 51.36 15.42V20H48.72V15.8C48.72 15.48 48.6333 15.22 48.46 15.02C48.3 14.82 48.0267 14.72 47.64 14.72H43.96V20H41.32ZM43.96 12.32H47.12C47.7467 12.32 48.2333 12.1533 48.58 11.82C48.94 11.4733 49.12 11.02 49.12 10.46V10.26C49.12 9.7 48.9467 9.25333 48.6 8.92C48.2533 8.57333 47.76 8.4 47.12 8.4H43.96V12.32ZM58.5567 20.28C57.5701 20.28 56.6967 20.0733 55.9367 19.66C55.1901 19.2333 54.6034 18.64 54.1767 17.88C53.7634 17.1067 53.5567 16.2 53.5567 15.16V14.92C53.5567 13.88 53.7634 12.98 54.1767 12.22C54.5901 11.4467 55.1701 10.8533 55.9167 10.44C56.6634 10.0133 57.5301 9.8 58.5167 9.8C59.4901 9.8 60.3367 10.02 61.0567 10.46C61.7767 10.8867 62.3367 11.4867 62.7367 12.26C63.1367 13.02 63.3367 13.9067 63.3367 14.92V15.78H56.1167C56.1434 16.46 56.3967 17.0133 56.8767 17.44C57.3567 17.8667 57.9434 18.08 58.6367 18.08C59.3434 18.08 59.8634 17.9267 60.1967 17.62C60.5301 17.3133 60.7834 16.9733 60.9567 16.6L63.0167 17.68C62.8301 18.0267 62.5567 18.4067 62.1967 18.82C61.8501 19.22 61.3834 19.5667 60.7967 19.86C60.2101 20.14 59.4634 20.28 58.5567 20.28ZM56.1367 13.9H60.7767C60.7234 13.3267 60.4901 12.8667 60.0767 12.52C59.6767 12.1733 59.1501 12 58.4967 12C57.8167 12 57.2767 12.1733 56.8767 12.52C56.4767 12.8667 56.2301 13.3267 56.1367 13.9ZM65.5797 20V10.08H68.0597V11.16H68.4197C68.593 10.8267 68.8797 10.54 69.2797 10.3C69.6797 10.0467 70.2064 9.92 70.8597 9.92C71.5664 9.92 72.133 10.06 72.5597 10.34C72.9864 10.6067 73.313 10.96 73.5397 11.4H73.8997C74.1264 10.9733 74.4464 10.62 74.8597 10.34C75.273 10.06 75.8597 9.92 76.6197 9.92C77.233 9.92 77.7864 10.0533 78.2797 10.32C78.7864 10.5733 79.1864 10.9667 79.4797 11.5C79.7864 12.02 79.9397 12.68 79.9397 13.48V20H77.4197V13.66C77.4197 13.1133 77.2797 12.7067 76.9997 12.44C76.7197 12.16 76.3264 12.02 75.8197 12.02C75.2464 12.02 74.7997 12.2067 74.4797 12.58C74.173 12.94 74.0197 13.46 74.0197 14.14V20H71.4997V13.66C71.4997 13.1133 71.3597 12.7067 71.0797 12.44C70.7997 12.16 70.4064 12.02 69.8997 12.02C69.3264 12.02 68.8797 12.2067 68.5597 12.58C68.253 12.94 68.0997 13.46 68.0997 14.14V20H65.5797ZM82.65 20V10.08H85.17V20H82.65ZM83.91 8.92C83.4567 8.92 83.07 8.77333 82.75 8.48C82.4433 8.18667 82.29 7.8 82.29 7.32C82.29 6.84 82.4433 6.45333 82.75 6.16C83.07 5.86667 83.4567 5.72 83.91 5.72C84.3767 5.72 84.7633 5.86667 85.07 6.16C85.3767 6.45333 85.53 6.84 85.53 7.32C85.53 7.8 85.3767 8.18667 85.07 8.48C84.7633 8.77333 84.3767 8.92 83.91 8.92ZM87.0825 20L90.6825 15L87.1225 10.08H90.0425L92.3025 13.38H92.6625L94.9225 10.08H97.8425L94.2825 15L97.8825 20H94.9225L92.6625 16.66H92.3025L90.0425 20H87.0825Z"
+                            fill="black" class="logo__text" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.917 12.019C11.917 11.512 11.507 11.101 11.001 11.101C10.495 11.101 10.084 11.512 10.084 12.019C10.084 12.526 10.495 12.937 11.001 12.937C11.507 12.937 11.917 12.526 11.917 12.019ZM13.668 12.019C13.668 13.492 12.472 14.69 11.001 14.69C9.531 14.69 8.334 13.492 8.334 12.019C8.334 10.546 9.531 9.348 11.001 9.348C12.472 9.348 13.668 10.546 13.668 12.019ZM18.793 9.34C17.966 6.943 16.071 5.05 13.676 4.227L13.558 5.163C15.539 5.904 17.111 7.476 17.857 9.456L18.793 9.34ZM16.935 9.572C16.283 7.992 15.022 6.729 13.444 6.078L13.324 7.033C14.49 7.581 15.433 8.524 15.98 9.692L16.935 9.572ZM14.668 12.019C14.668 9.991 13.025 8.346 11.001 8.346C8.976 8.346 7.334 9.991 7.334 12.019C7.334 14.047 8.976 15.692 11.001 15.692C13.025 15.692 14.668 14.047 14.668 12.019ZM8.677 17.006C7.511 16.457 6.57 15.514 6.023 14.346L5.069 14.465C5.719 16.047 6.98 17.309 8.559 17.961L8.677 17.006ZM8.439 18.912C6.45 18.165 4.87 16.58 4.131 14.583L3.196 14.701C4.018 17.113 5.917 19.019 8.322 19.848L8.439 18.912ZM22 12.019C22 12.283 21.978 12.54 21.96 12.799C21.828 12.766 21.503 12.685 21.066 12.778C20.771 12.292 20.216 11.979 19.563 11.979C18.878 11.979 18.293 12.33 18.015 12.864C17.069 12.694 15.917 13.282 15.917 14.457V17.218C15.23 16.498 13.001 16.842 13.001 18.628C13.001 18.903 13.063 19.177 13.186 19.448C13.252 19.606 14.579 22.253 14.653 22.403C13.509 22.807 12.283 23.038 11.001 23.038C4.926 23.038 0 18.105 0 12.019C0 5.934 4.926 1 11 1C17.074 1 22 5.934 22 12.019ZM15.698 18.305C15.705 18.315 16.455 19.695 16.57 19.912C16.694 20.14 17.064 20.091 17.064 19.792V14.457C17.064 13.618 18.412 13.643 18.412 14.457V18.768C18.412 19.002 18.865 18.998 18.865 18.768L18.867 13.637C18.867 13.196 19.222 12.981 19.581 12.981C19.944 12.981 20.31 13.202 20.31 13.637V18.709C20.31 18.944 20.747 18.953 20.747 18.715V14.392C20.747 13.53 22.222 13.506 22.222 14.392V18.971C22.222 19.204 22.694 19.205 22.694 18.971V16.122C22.694 15.344 23.998 15.3 23.998 16.161L24 22.66C24 24.149 23.169 25 21.594 25H18.659C17.162 25 16.637 24.154 16.221 23.304C15.826 22.496 14.22 19.328 14.096 19.032C14.03 18.888 14.001 18.752 14.001 18.628C14.001 17.819 15.277 17.5 15.698 18.305Z"
+                            fill="#F7CA18" />
+                    </svg>
+                </a>
+                <p class="popup__steps">
+                    Step <span class="current-step">1</span>/3
+                </p>
+            </header>
+            <article class="popup__step">
+                <h6 class="popup__heading">
+                    Set up your Remix Environment
+                </h6>
+                <p class="popup__desc">
+                    This will take less than a minute, we use this
+                    information to customize Remix for you;
+                </p>
+                <label for="personal" data-desc="I’m using this for a team of <2." class="popup__subscription">
+                    Personal Use
+                    <input type="radio" name="subscription" id="personal" class="popup__radio" checked />
+                </label>
+                <label for="corporate" data-desc="I’m using this for a team of >2." class="popup__subscription">
+                    Corporate Use
+                    <input type="radio" name="subscription" id="corporate" class="popup__radio" />
+                </label>
+                <a href="#" rel="noopener noreferrer" class="btn btn--transparent popup__btn popup__close">
+                    Previous
+                </a>
+                <a href="onboarding-step-2.html" rel="noopener noreferrer" class="btn btn--accent popup__btn" data-swup-preload>Next</a>
+            </article>
+            <footer class="popup__copyright">
+                © 2021 Remix. All Rights Reserved.
+            </footer>
+        </section>
+    </dialog>
+    <header class="header container">
+        <nav class="navigation header__navigation">
+            <ul class="navigation__items">
+                <li class="navigation__item">
+                    <a href="#" rel="noopener noreferrer" class="link navigation__link">
+                        <svg width="99" height="26" viewBox="0 0 99 26" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="logo navigation__logo">
                             <path
                                 d="M41.32 20V6H47.4C48.28 6 49.0467 6.15333 49.7 6.46C50.3533 6.76667 50.86 7.2 51.22 7.76C51.58 8.32 51.76 8.98 51.76 9.74V9.98C51.76 10.82 51.56 11.5 51.16 12.02C50.76 12.54 50.2667 12.92 49.68 13.16V13.52C50.2133 13.5467 50.6267 13.7333 50.92 14.08C51.2133 14.4133 51.36 14.86 51.36 15.42V20H48.72V15.8C48.72 15.48 48.6333 15.22 48.46 15.02C48.3 14.82 48.0267 14.72 47.64 14.72H43.96V20H41.32ZM43.96 12.32H47.12C47.7467 12.32 48.2333 12.1533 48.58 11.82C48.94 11.4733 49.12 11.02 49.12 10.46V10.26C49.12 9.7 48.9467 9.25333 48.6 8.92C48.2533 8.57333 47.76 8.4 47.12 8.4H43.96V12.32ZM58.5567 20.28C57.5701 20.28 56.6967 20.0733 55.9367 19.66C55.1901 19.2333 54.6034 18.64 54.1767 17.88C53.7634 17.1067 53.5567 16.2 53.5567 15.16V14.92C53.5567 13.88 53.7634 12.98 54.1767 12.22C54.5901 11.4467 55.1701 10.8533 55.9167 10.44C56.6634 10.0133 57.5301 9.8 58.5167 9.8C59.4901 9.8 60.3367 10.02 61.0567 10.46C61.7767 10.8867 62.3367 11.4867 62.7367 12.26C63.1367 13.02 63.3367 13.9067 63.3367 14.92V15.78H56.1167C56.1434 16.46 56.3967 17.0133 56.8767 17.44C57.3567 17.8667 57.9434 18.08 58.6367 18.08C59.3434 18.08 59.8634 17.9267 60.1967 17.62C60.5301 17.3133 60.7834 16.9733 60.9567 16.6L63.0167 17.68C62.8301 18.0267 62.5567 18.4067 62.1967 18.82C61.8501 19.22 61.3834 19.5667 60.7967 19.86C60.2101 20.14 59.4634 20.28 58.5567 20.28ZM56.1367 13.9H60.7767C60.7234 13.3267 60.4901 12.8667 60.0767 12.52C59.6767 12.1733 59.1501 12 58.4967 12C57.8167 12 57.2767 12.1733 56.8767 12.52C56.4767 12.8667 56.2301 13.3267 56.1367 13.9ZM65.5797 20V10.08H68.0597V11.16H68.4197C68.593 10.8267 68.8797 10.54 69.2797 10.3C69.6797 10.0467 70.2064 9.92 70.8597 9.92C71.5664 9.92 72.133 10.06 72.5597 10.34C72.9864 10.6067 73.313 10.96 73.5397 11.4H73.8997C74.1264 10.9733 74.4464 10.62 74.8597 10.34C75.273 10.06 75.8597 9.92 76.6197 9.92C77.233 9.92 77.7864 10.0533 78.2797 10.32C78.7864 10.5733 79.1864 10.9667 79.4797 11.5C79.7864 12.02 79.9397 12.68 79.9397 13.48V20H77.4197V13.66C77.4197 13.1133 77.2797 12.7067 76.9997 12.44C76.7197 12.16 76.3264 12.02 75.8197 12.02C75.2464 12.02 74.7997 12.2067 74.4797 12.58C74.173 12.94 74.0197 13.46 74.0197 14.14V20H71.4997V13.66C71.4997 13.1133 71.3597 12.7067 71.0797 12.44C70.7997 12.16 70.4064 12.02 69.8997 12.02C69.3264 12.02 68.8797 12.2067 68.5597 12.58C68.253 12.94 68.0997 13.46 68.0997 14.14V20H65.5797ZM82.65 20V10.08H85.17V20H82.65ZM83.91 8.92C83.4567 8.92 83.07 8.77333 82.75 8.48C82.4433 8.18667 82.29 7.8 82.29 7.32C82.29 6.84 82.4433 6.45333 82.75 6.16C83.07 5.86667 83.4567 5.72 83.91 5.72C84.3767 5.72 84.7633 5.86667 85.07 6.16C85.3767 6.45333 85.53 6.84 85.53 7.32C85.53 7.8 85.3767 8.18667 85.07 8.48C84.7633 8.77333 84.3767 8.92 83.91 8.92ZM87.0825 20L90.6825 15L87.1225 10.08H90.0425L92.3025 13.38H92.6625L94.9225 10.08H97.8425L94.2825 15L97.8825 20H94.9225L92.6625 16.66H92.3025L90.0425 20H87.0825Z"
-                                fill="black"
-                                class="logo__text"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
+                                fill="black" class="logo__text" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M11.917 12.019C11.917 11.512 11.507 11.101 11.001 11.101C10.495 11.101 10.084 11.512 10.084 12.019C10.084 12.526 10.495 12.937 11.001 12.937C11.507 12.937 11.917 12.526 11.917 12.019ZM13.668 12.019C13.668 13.492 12.472 14.69 11.001 14.69C9.531 14.69 8.334 13.492 8.334 12.019C8.334 10.546 9.531 9.348 11.001 9.348C12.472 9.348 13.668 10.546 13.668 12.019ZM18.793 9.34C17.966 6.943 16.071 5.05 13.676 4.227L13.558 5.163C15.539 5.904 17.111 7.476 17.857 9.456L18.793 9.34ZM16.935 9.572C16.283 7.992 15.022 6.729 13.444 6.078L13.324 7.033C14.49 7.581 15.433 8.524 15.98 9.692L16.935 9.572ZM14.668 12.019C14.668 9.991 13.025 8.346 11.001 8.346C8.976 8.346 7.334 9.991 7.334 12.019C7.334 14.047 8.976 15.692 11.001 15.692C13.025 15.692 14.668 14.047 14.668 12.019ZM8.677 17.006C7.511 16.457 6.57 15.514 6.023 14.346L5.069 14.465C5.719 16.047 6.98 17.309 8.559 17.961L8.677 17.006ZM8.439 18.912C6.45 18.165 4.87 16.58 4.131 14.583L3.196 14.701C4.018 17.113 5.917 19.019 8.322 19.848L8.439 18.912ZM22 12.019C22 12.283 21.978 12.54 21.96 12.799C21.828 12.766 21.503 12.685 21.066 12.778C20.771 12.292 20.216 11.979 19.563 11.979C18.878 11.979 18.293 12.33 18.015 12.864C17.069 12.694 15.917 13.282 15.917 14.457V17.218C15.23 16.498 13.001 16.842 13.001 18.628C13.001 18.903 13.063 19.177 13.186 19.448C13.252 19.606 14.579 22.253 14.653 22.403C13.509 22.807 12.283 23.038 11.001 23.038C4.926 23.038 0 18.105 0 12.019C0 5.934 4.926 1 11 1C17.074 1 22 5.934 22 12.019ZM15.698 18.305C15.705 18.315 16.455 19.695 16.57 19.912C16.694 20.14 17.064 20.091 17.064 19.792V14.457C17.064 13.618 18.412 13.643 18.412 14.457V18.768C18.412 19.002 18.865 18.998 18.865 18.768L18.867 13.637C18.867 13.196 19.222 12.981 19.581 12.981C19.944 12.981 20.31 13.202 20.31 13.637V18.709C20.31 18.944 20.747 18.953 20.747 18.715V14.392C20.747 13.53 22.222 13.506 22.222 14.392V18.971C22.222 19.204 22.694 19.205 22.694 18.971V16.122C22.694 15.344 23.998 15.3 23.998 16.161L24 22.66C24 24.149 23.169 25 21.594 25H18.659C17.162 25 16.637 24.154 16.221 23.304C15.826 22.496 14.22 19.328 14.096 19.032C14.03 18.888 14.001 18.752 14.001 18.628C14.001 17.819 15.277 17.5 15.698 18.305Z"
-                                fill="#F7CA18"
-                            />
+                                fill="#F7CA18" />
                         </svg>
                     </a>
-                    <p class="popup__steps">
-                        Step <span class="current-step">1</span>/3
-                    </p>
-                </header>
-                <article class="popup__step">
-                    <h6 class="popup__heading">
-                        Set up your Remix Environment
-                    </h6>
-                    <p class="popup__desc">
-                        This will take less than a minute, we use this
-                        information to customize Remix for you;
-                    </p>
-                    <label
-                        for="personal"
-                        data-desc="I’m using this for a team of <2."
-                        class="popup__subscription"
-                    >
-                        Personal Use
-                        <input
-                            type="radio"
-                            name="subscription"
-                            id="personal"
-                            class="popup__radio"
-                            checked
-                        />
-                    </label>
-                    <label
-                        for="corporate"
-                        data-desc="I’m using this for a team of >2."
-                        class="popup__subscription"
-                    >
-                        Corporate Use
-                        <input
-                            type="radio"
-                            name="subscription"
-                            id="corporate"
-                            class="popup__radio"
-                        />
-                    </label>
-                    <a href="#" rel="noopener noreferrer" class="btn btn--transparent popup__btn popup__close">
-                        Previous
-                    </button>
-                    <a href="onboarding-step-2.html" rel="noopener noreferrer" class="btn btn--accent popup__btn" data-swup-preload>Next</button>
-                </article>
-                <footer class="popup__copyright">
-                    © 2021 Remix. All Rights Reserved.
-                </footer>
-            </section>
-        </dialog>
-        <header class="header container">
-            <nav class="navigation header__navigation">
-                <ul class="navigation__items">
-                    <li class="navigation__item">
-                        <a href="#" rel="noopener noreferrer" class="link navigation__link">
-                            <svg
-                                width="99"
-                                height="26"
-                                viewBox="0 0 99 26"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="logo navigation__logo"
-                            >
-                                <path
-                                    d="M41.32 20V6H47.4C48.28 6 49.0467 6.15333 49.7 6.46C50.3533 6.76667 50.86 7.2 51.22 7.76C51.58 8.32 51.76 8.98 51.76 9.74V9.98C51.76 10.82 51.56 11.5 51.16 12.02C50.76 12.54 50.2667 12.92 49.68 13.16V13.52C50.2133 13.5467 50.6267 13.7333 50.92 14.08C51.2133 14.4133 51.36 14.86 51.36 15.42V20H48.72V15.8C48.72 15.48 48.6333 15.22 48.46 15.02C48.3 14.82 48.0267 14.72 47.64 14.72H43.96V20H41.32ZM43.96 12.32H47.12C47.7467 12.32 48.2333 12.1533 48.58 11.82C48.94 11.4733 49.12 11.02 49.12 10.46V10.26C49.12 9.7 48.9467 9.25333 48.6 8.92C48.2533 8.57333 47.76 8.4 47.12 8.4H43.96V12.32ZM58.5567 20.28C57.5701 20.28 56.6967 20.0733 55.9367 19.66C55.1901 19.2333 54.6034 18.64 54.1767 17.88C53.7634 17.1067 53.5567 16.2 53.5567 15.16V14.92C53.5567 13.88 53.7634 12.98 54.1767 12.22C54.5901 11.4467 55.1701 10.8533 55.9167 10.44C56.6634 10.0133 57.5301 9.8 58.5167 9.8C59.4901 9.8 60.3367 10.02 61.0567 10.46C61.7767 10.8867 62.3367 11.4867 62.7367 12.26C63.1367 13.02 63.3367 13.9067 63.3367 14.92V15.78H56.1167C56.1434 16.46 56.3967 17.0133 56.8767 17.44C57.3567 17.8667 57.9434 18.08 58.6367 18.08C59.3434 18.08 59.8634 17.9267 60.1967 17.62C60.5301 17.3133 60.7834 16.9733 60.9567 16.6L63.0167 17.68C62.8301 18.0267 62.5567 18.4067 62.1967 18.82C61.8501 19.22 61.3834 19.5667 60.7967 19.86C60.2101 20.14 59.4634 20.28 58.5567 20.28ZM56.1367 13.9H60.7767C60.7234 13.3267 60.4901 12.8667 60.0767 12.52C59.6767 12.1733 59.1501 12 58.4967 12C57.8167 12 57.2767 12.1733 56.8767 12.52C56.4767 12.8667 56.2301 13.3267 56.1367 13.9ZM65.5797 20V10.08H68.0597V11.16H68.4197C68.593 10.8267 68.8797 10.54 69.2797 10.3C69.6797 10.0467 70.2064 9.92 70.8597 9.92C71.5664 9.92 72.133 10.06 72.5597 10.34C72.9864 10.6067 73.313 10.96 73.5397 11.4H73.8997C74.1264 10.9733 74.4464 10.62 74.8597 10.34C75.273 10.06 75.8597 9.92 76.6197 9.92C77.233 9.92 77.7864 10.0533 78.2797 10.32C78.7864 10.5733 79.1864 10.9667 79.4797 11.5C79.7864 12.02 79.9397 12.68 79.9397 13.48V20H77.4197V13.66C77.4197 13.1133 77.2797 12.7067 76.9997 12.44C76.7197 12.16 76.3264 12.02 75.8197 12.02C75.2464 12.02 74.7997 12.2067 74.4797 12.58C74.173 12.94 74.0197 13.46 74.0197 14.14V20H71.4997V13.66C71.4997 13.1133 71.3597 12.7067 71.0797 12.44C70.7997 12.16 70.4064 12.02 69.8997 12.02C69.3264 12.02 68.8797 12.2067 68.5597 12.58C68.253 12.94 68.0997 13.46 68.0997 14.14V20H65.5797ZM82.65 20V10.08H85.17V20H82.65ZM83.91 8.92C83.4567 8.92 83.07 8.77333 82.75 8.48C82.4433 8.18667 82.29 7.8 82.29 7.32C82.29 6.84 82.4433 6.45333 82.75 6.16C83.07 5.86667 83.4567 5.72 83.91 5.72C84.3767 5.72 84.7633 5.86667 85.07 6.16C85.3767 6.45333 85.53 6.84 85.53 7.32C85.53 7.8 85.3767 8.18667 85.07 8.48C84.7633 8.77333 84.3767 8.92 83.91 8.92ZM87.0825 20L90.6825 15L87.1225 10.08H90.0425L92.3025 13.38H92.6625L94.9225 10.08H97.8425L94.2825 15L97.8825 20H94.9225L92.6625 16.66H92.3025L90.0425 20H87.0825Z"
-                                    fill="black"
-                                    class="logo__text"
-                                />
-                                <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
-                                    d="M11.917 12.019C11.917 11.512 11.507 11.101 11.001 11.101C10.495 11.101 10.084 11.512 10.084 12.019C10.084 12.526 10.495 12.937 11.001 12.937C11.507 12.937 11.917 12.526 11.917 12.019ZM13.668 12.019C13.668 13.492 12.472 14.69 11.001 14.69C9.531 14.69 8.334 13.492 8.334 12.019C8.334 10.546 9.531 9.348 11.001 9.348C12.472 9.348 13.668 10.546 13.668 12.019ZM18.793 9.34C17.966 6.943 16.071 5.05 13.676 4.227L13.558 5.163C15.539 5.904 17.111 7.476 17.857 9.456L18.793 9.34ZM16.935 9.572C16.283 7.992 15.022 6.729 13.444 6.078L13.324 7.033C14.49 7.581 15.433 8.524 15.98 9.692L16.935 9.572ZM14.668 12.019C14.668 9.991 13.025 8.346 11.001 8.346C8.976 8.346 7.334 9.991 7.334 12.019C7.334 14.047 8.976 15.692 11.001 15.692C13.025 15.692 14.668 14.047 14.668 12.019ZM8.677 17.006C7.511 16.457 6.57 15.514 6.023 14.346L5.069 14.465C5.719 16.047 6.98 17.309 8.559 17.961L8.677 17.006ZM8.439 18.912C6.45 18.165 4.87 16.58 4.131 14.583L3.196 14.701C4.018 17.113 5.917 19.019 8.322 19.848L8.439 18.912ZM22 12.019C22 12.283 21.978 12.54 21.96 12.799C21.828 12.766 21.503 12.685 21.066 12.778C20.771 12.292 20.216 11.979 19.563 11.979C18.878 11.979 18.293 12.33 18.015 12.864C17.069 12.694 15.917 13.282 15.917 14.457V17.218C15.23 16.498 13.001 16.842 13.001 18.628C13.001 18.903 13.063 19.177 13.186 19.448C13.252 19.606 14.579 22.253 14.653 22.403C13.509 22.807 12.283 23.038 11.001 23.038C4.926 23.038 0 18.105 0 12.019C0 5.934 4.926 1 11 1C17.074 1 22 5.934 22 12.019ZM15.698 18.305C15.705 18.315 16.455 19.695 16.57 19.912C16.694 20.14 17.064 20.091 17.064 19.792V14.457C17.064 13.618 18.412 13.643 18.412 14.457V18.768C18.412 19.002 18.865 18.998 18.865 18.768L18.867 13.637C18.867 13.196 19.222 12.981 19.581 12.981C19.944 12.981 20.31 13.202 20.31 13.637V18.709C20.31 18.944 20.747 18.953 20.747 18.715V14.392C20.747 13.53 22.222 13.506 22.222 14.392V18.971C22.222 19.204 22.694 19.205 22.694 18.971V16.122C22.694 15.344 23.998 15.3 23.998 16.161L24 22.66C24 24.149 23.169 25 21.594 25H18.659C17.162 25 16.637 24.154 16.221 23.304C15.826 22.496 14.22 19.328 14.096 19.032C14.03 18.888 14.001 18.752 14.001 18.628C14.001 17.819 15.277 17.5 15.698 18.305Z"
-                                    fill="#F7CA18"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="navigation__item navigation__item--desktop-only">
-                        <a href="#" rel="noopener noreferrer" class="link navigation__link">Product</a>
-                    </li>
-                    <li class="navigation__item navigation__item--desktop-only">
-                        <a
-                            href="#"
-                            class="link navigation__link"
-                            >Pricing</a
-                        >
-                    </li>
-                    <li class="navigation__item navigation__item--desktop-only">
-                        <a href="#" rel="noopener noreferrer" class="link navigation__link">For Sketch</a>
-                    </li>
-                    <li
-                        class="
-                            navigation__item
-                            navigation__item--desktop-only
-                            navigation__item--spacer
-                        "
-                    >
-                        <div class="theme-switch">
-                            <input
-                                type="checkbox"
-                                id="theme-switch__input"
-                                class="theme-switch__input"
-                            />
-                            <label
-                                for="theme-switch__input"
-                                class="theme-switch__label"
-                            >
-                                <div class="theme-switch__icon">
-                                    <img
-                                        src="./assets/images/sun.svg"
-                                        alt="Light Theme"
-                                        class="theme-light"
-                                    />
-                                    <p>Light</p>
-                                </div>
-                                <div class="theme-switch__icon">
-                                    <img
-                                        src="./assets/images/moon.svg"
-                                        alt="Dark Theme"
-                                        class="theme-dark"
-                                    />
-                                    <p>Dark</p>
-                                </div>
-                                <div class="theme-switch__toggle"></div>
-                            </label>
-                        </div>
-                    </li>
-                    <li class="navigation__item navigation__item--desktop-only">
-                        <a href="#" rel="noopener noreferrer" class="link navigation__link">Sign in</a>
-                    </li>
-                    <li class="navigation__item navigation__item--desktop-only">
-                        <button class="btn btn--accent btn--figma">
-                            Get Figma Plugin
-                        </button>
-                    </li>
-                    <li class="navigation__item navigation__item--mobile-only">
-                        <button class="hamburger" aria-label="Menu">
-                            <span class="hamburger__container" tabindex="-1">
-                                <span class="hamburger__bars"></span>
-                            </span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="navigation navigation--mobile header__navigation header__navigation--mobile">
-                <ul class="navigation__items navigation__items--vertical">
-                    <li class="navigation__item">
-                        <a href="#" rel="noopener noreferrer" class="link navigation__link">Product</a>
-                    </li>
-                    <li class="navigation__item">
-                        <a
-                            href="https://www.twitch.tv/arhneu"
-                            class="link navigation__link"
-                            >Pricing</a
-                        >
-                    </li>
-                    <li class="navigation__item">
-                        <a href="#" rel="noopener noreferrer" class="link navigation__link">For Sketch</a>
-                    </li>
-                    <li
-                        class="navigation__item"
-                    >
-                        <div class="theme-switch">
-                            <input
-                                type="checkbox"
-                                id="theme-switch__input"
-                                class="theme-switch__input"
-                            />
-                            <label
-                                for="theme-switch__input"
-                                class="theme-switch__label"
-                            >
-                                <div class="theme-switch__icon">
-                                    <img
-                                        src="./assets/images/sun.svg"
-                                        alt="Light Theme"
-                                        class="theme-light"
-                                    />
-                                    <p>Light</p>
-                                </div>
-                                <div class="theme-switch__icon">
-                                    <img
-                                        src="./assets/images/moon.svg"
-                                        alt="Dark Theme"
-                                        class="theme-dark"
-                                    />
-                                    <p>Dark</p>
-                                </div>
-                                <div class="theme-switch__toggle"></div>
-                            </label>
-                        </div>
-                    </li>
-                    <li class="navigation__item">
-                        <a href="#" rel="noopener noreferrer" class="link navigation__link">Sign in</a>
-                    </li>
-                    <li class="navigation__item">
-                        <button class="btn btn--accent btn--figma">
-                            Get Figma Plugin
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-            <section class="header__hero">
-                <article class="header__cta">
-                    <h1 class="header__title">
-                        Developer hand-off has
-                        <span class="decorator decorator--figma-selected"
-                            >never</span
-                        >
-                        been easier.
-                    </h1>
-                    <p class="header__desc">
-                        Remix is a Figma and Sketch plugin that was made with
-                        Developers in mind. Create custom React components in
-                        seconds, copy CSS code in one click, and export your
-                        assets effortlessly.
-                    </p>
-                    <button class="btn btn--accent btn--figma header__btn">
+                </li>
+                <li class="navigation__item navigation__item--desktop-only">
+                    <a href="#" rel="noopener noreferrer" class="link navigation__link">Product</a>
+                </li>
+                <li class="navigation__item navigation__item--desktop-only">
+                    <a href="#" class="link navigation__link">Pricing</a>
+                </li>
+                <li class="navigation__item navigation__item--desktop-only">
+                    <a href="#" rel="noopener noreferrer" class="link navigation__link">For Sketch</a>
+                </li>
+                <li class="navigation__itemnavigation__item--desktop-onlynavigation__item--spacer">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="theme-switch__input" class="theme-switch__input" />
+                        <label for="theme-switch__input" class="theme-switch__label">
+                            <div class="theme-switch__icon">
+                                <img src="./assets/images/sun.svg" alt="Light Theme" class="theme-light" />
+                                <p>Light</p>
+                            </div>
+                            <div class="theme-switch__icon">
+                                <img src="./assets/images/moon.svg" alt="Dark Theme" class="theme-dark" />
+                                <p>Dark</p>
+                            </div>
+                            <div class="theme-switch__toggle"></div>
+                        </label>
+                    </div>
+                </li>
+                <li class="navigation__item navigation__item--desktop-only">
+                    <a href="#" rel="noopener noreferrer" class="link navigation__link">Sign in</a>
+                </li>
+                <li class="navigation__item navigation__item--desktop-only">
+                    <button class="btn btn--accent btn--figma">
                         Get Figma Plugin
                     </button>
-                </article>
-                <aside class="header__image"></aside>
-            </section>
-        </header>
-        <main class="page">
-            <section class="collaboration">
-                <div class="container collaboration__container">
-                    <article class="collaboration__cta">
-                        <h2 class="collaboration__heading">
-                            Collaboration has never been easier.
-                        </h2>
-                        <p class="collaboration__desc">
-                            With Remix, you will be able to actively collaborate
-                            with developers in real-time. No more back-and-forth
-                            emails and Slack messages to get that design
-                            perfect.
-                        </p>
-                        <a href="#" rel="noopener noreferrer" class="link collaboration__link"
-                            >Learn More
-                            <span class="decorator decorator--arrow"></span
-                        ></a>
-                    </article>
-                    <aside class="collaboration__ilustration"></aside>
-                </div>
-            </section>
-            <section class="testimonials">
-                <div class="container testimonials__container">
-                    <div class="testimonials__cta">
-                        <h2 class="testimonials__heading">
-                            What our users say
-                        </h2>
-                        <p class="testimonials__desc">
-                            We have cultivated a growing community for
-                            developers, and that matters to us. See what our
-                            users are saying.
-                        </p>
-                        <p class="testimonials__rating">
-                            <span class="testimonials__score">5.0</span>
-                            Rating<span
-                                class="star star--mid testimonials__star"
-                            ></span>
-                        </p>
-                        <p class="testimonials__users">
-                            <span class="testimonials__users-count"
-                                >2400+
-                            </span>
-                            Developers
-                            <img
-                                src="./assets/images/user-avatar-six.png"
-                                alt="User avatar"
-                                loading="lazy"
-                                class="testimonials__avatar"
-                            />
-                            <img
-                                src="./assets/images/user-avatar-five.png"
-                                alt="User avatar"
-                                loading="lazy"
-                                class="testimonials__avatar"
-                            />
-                            <img
-                                src="./assets/images/user-avatar-four.png"
-                                alt="User avatar"
-                                loading="lazy"
-                                class="testimonials__avatar"
-                            />
-                            <img
-                                src="./assets/images/user-avatar-three.png"
-                                alt="User avatar"
-                                loading="lazy"
-                                class="testimonials__avatar"
-                            />
-                            <img
-                                src="./assets/images/user-avatar-two.png"
-                                alt="User avatar"
-                                loading="lazy"
-                                class="testimonials__avatar"
-                            />
-                            <img
-                                src="./assets/images/user-avatar-one.png"
-                                alt="User avatar"
-                                loading="lazy"
-                                class="testimonials__avatar"
-                            />
-                        </p>
+                </li>
+                <li class="navigation__item navigation__item--mobile-only">
+                    <button class="hamburger" aria-label="Menu">
+                        <span class="hamburger__container" tabindex="-1">
+                            <span class="hamburger__bars"></span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <nav class="navigation navigation--mobile header__navigation header__navigation--mobile">
+            <ul class="navigation__items navigation__items--vertical">
+                <li class="navigation__item">
+                    <a href="#" rel="noopener noreferrer" class="link navigation__link">Product</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="https://www.twitch.tv/arhneu" class="link navigation__link">Pricing</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" rel="noopener noreferrer" class="link navigation__link">For Sketch</a>
+                </li>
+                <li class="navigation__item">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="theme-switch__input" class="theme-switch__input" />
+                        <label for="theme-switch__input" class="theme-switch__label">
+                            <div class="theme-switch__icon">
+                                <img src="./assets/images/sun.svg" alt="Light Theme" class="theme-light" />
+                                <p>Light</p>
+                            </div>
+                            <div class="theme-switch__icon">
+                                <img src="./assets/images/moon.svg" alt="Dark Theme" class="theme-dark" />
+                                <p>Dark</p>
+                            </div>
+                            <div class="theme-switch__toggle"></div>
+                        </label>
                     </div>
-                    <div class="testimonials__items">
-                        <article class="testimonial">
-                            <img
-                                src="./assets/images/testimonial-avatar-one.png"
-                                loading="lazy"
-                                alt="Reviewer avatar"
-                                class="testimonial__avatar"
-                            />
-                            <blockquote class="testimonial__review">
-                                Developers, you no longer need to spend hours
-                                translating designs.
-                            </blockquote>
-                            <h6 class="testimonial__author">Jesse Hendricks</h6>
-                            <span class="testimonial__rating">
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                            </span>
-                        </article>
-                        <article class="testimonial">
-                            <img
-                                src="./assets/images/testimonial-avatar-two.png"
-                                loading="lazy"
-                                alt="Reviewer avatar"
-                                class="testimonial__avatar"
-                            />
-                            <blockquote class="testimonial__review">
-                                Remix has been a life saver when it comes to
-                                developer hand off.
-                            </blockquote>
-                            <h6 class="testimonial__author">Mia andrews</h6>
-                            <span class="testimonial__rating">
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                                <span
-                                    class="star star--small testimonials__star"
-                                ></span>
-                            </span>
-                        </article>
-                    </div>
-                </div>
-            </section>
-            <section class="guide">
-                <div class="container guide__container">
-                    <div class="guide__content">
-                        <h2 class="guide__heading">
-                            Get the Ultimate Developer Hand Off Guide
-                        </h2>
-                        <p class="guide__desc on-accent">
-                            A guide with 120+ hours worth of content to guide
-                            you on how to perfectly hand over your designs to
-                            your developers. Best part? It’s completely free.
-                        </p>
-                        <form action="#" class="guide__form">
-                            <label for="guide__email" class="guide__form-label"
-                                >Email:</label
-                            >
-                            <input
-                                type="email"
-                                name="guide__form-email"
-                                id="guide__form-email"
-                                placeholder="Enter email address"
-                                class="input input--email guide__form-email"
-                                required
-                            />
-                            <button
-                                type="submit"
-                                class="guide__submit btn btn--dark"
-                            >
-                                Send me the guide
-                            </button>
-                        </form>
-                    </div>
-                    <div class="guide__ilustration"></div>
-                </div>
-            </section>
-            <section class="subscription">
-                <div class="container subscription__container">
-                    <article class="subscription__item">
-                        <h6 class="subscription__heading">Basic</h6>
-                        <p class="subscription__price">
-                            $39<sub class="subscription__price--period"
-                                >/mo</sub
-                            >
-                        </p>
-                        <p class="subscription__desc">
-                            Suited for small teams with minimal developer
-                            handoffs.
-                        </p>
-                        <ul class="subscription__features">
-                            <li class="subscription__feature">
-                                Web access only.
-                            </li>
-                            <li class="subscription__feature">
-                                20 Handoffs per month.
-                            </li>
-                            <li class="subscription__feature">2 members.</li>
-                            <li class="subscription__feature">
-                                Offline editing only.
-                            </li>
-                        </ul>
-                        <button class="subscription__btn btn btn--accent">
-                            Subscribe
-                        </button>
-                    </article>
-                    <article
-                        class="
-                            subscription__item subscription__item--highlighted
-                        "
-                    >
-                        <h6 class="subscription__heading">Starter</h6>
-                        <p class="subscription__price">
-                            $59<sub class="subscription__price--period"
-                                >/mo</sub
-                            >
-                        </p>
-                        <p class="subscription__desc">
-                            Suited for medium businesses with a lot of handoffs.
-                        </p>
-                        <ul class="subscription__features">
-                            <li class="subscription__feature">
-                                Web & Figma Plugin.
-                            </li>
-                            <li class="subscription__feature">
-                                60 Handoffs per month.
-                            </li>
-                            <li class="subscription__feature">4 members.</li>
-                            <li class="subscription__feature">Live editing.</li>
-                        </ul>
-                        <button class="subscription__btn btn btn--accent">
-                            Subscribe
-                        </button>
-                    </article>
-                    <article class="subscription__item">
-                        <h6 class="subscription__heading">Pro</h6>
-                        <p class="subscription__price">
-                            $129<sub class="subscription__price--period"
-                                >/mo</sub
-                            >
-                        </p>
-                        <p class="subscription__desc">
-                            Suited for enterprises with daily developer
-                            handoffs.
-                        </p>
-                        <ul class="subscription__features">
-                            <li class="subscription__feature">
-                                Web & Figma Plugin.
-                            </li>
-                            <li class="subscription__feature">
-                                500+ Handoffs per month.
-                            </li>
-                            <li class="subscription__feature">
-                                Unlimited members.
-                            </li>
-                            <li class="subscription__feature">Live editing.</li>
-                        </ul>
-                        <button class="subscription__btn btn btn--accent">
-                            Subscribe
-                        </button>
-                    </article>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="container footer__container">
-                <section class="footer__text">
-                    <h5 class="footer__title">Remix</h5>
-                    <p class="footer__desc on-accent">
-                        Remix is a Figma and Sketch plugin that was made with
-                        Developers in mind. Create custom React components in
-                        seconds, copy CSS code in one click, and export your
-                        assets effortlessly.
+                </li>
+                <li class="navigation__item">
+                    <a href="#" rel="noopener noreferrer" class="link navigation__link">Sign in</a>
+                </li>
+                <li class="navigation__item">
+                    <button class="btn btn--accent btn--figma">
+                        Get Figma Plugin
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <section class="header__hero">
+            <article class="header__cta">
+                <h1 class="header__title">
+                    Developer hand-off has
+                    <span class="decorator decorator--figma-selected">never</span>
+                    been easier.
+                </h1>
+                <p class="header__desc">
+                    Remix is a Figma and Sketch plugin that was made with
+                    Developers in mind. Create custom React components in
+                    seconds, copy CSS code in one click, and export your
+                    assets effortlessly.
+                </p>
+                <button class="btn btn--accent btn--figma header__btn">
+                    Get Figma Plugin
+                </button>
+            </article>
+            <aside class="header__image"></aside>
+        </section>
+    </header>
+    <main class="page">
+        <section class="collaboration">
+            <div class="container collaboration__container">
+                <article class="collaboration__cta">
+                    <h2 class="collaboration__heading">
+                        Collaboration has never been easier.
+                    </h2>
+                    <p class="collaboration__desc">
+                        With Remix, you will be able to actively collaborate
+                        with developers in real-time. No more back-and-forth
+                        emails and Slack messages to get that design
+                        perfect.
                     </p>
-                </section>
-                <section class="footer__links">
-                    <ul class="footer__links-column footer__support">
-                        <li class="link link--on-accent footer__link">
-                            Supported
-                        </li>
-                        <li class="link link--on-accent footer__link">
-                            Sketch
-                        </li>
-                        <li class="link link--on-accent footer__link">Figma</li>
-                    </ul>
-                    <ul class="footer__links-column footer__development">
-                        <li class="link link--on-accent footer__link">
-                            Developers
-                        </li>
-                        <li class="link link--on-accent footer__link">API</li>
-                        <li class="link link--on-accent footer__link">
-                            Documentation
-                        </li>
-                    </ul>
-                    <ul class="footer__links-column footer__company">
-                        <li class="link link--on-accent footer__link">
-                            Company
-                        </li>
-                        <li class="link link--on-accent footer__link">
-                            Career
-                        </li>
-                        <li class="link link--on-accent footer__link">
-                            Support
-                        </li>
-                        <li class="link link--on-accent footer__link">
-                            Culture
-                        </li>
-                    </ul>
-                </section>
+                    <a href="#" rel="noopener noreferrer" class="link collaboration__link">Learn More
+                        <span class="decorator decorator--arrow"></span></a>
+                </article>
+                <aside class="collaboration__ilustration"></aside>
             </div>
-            <section class="footer__bar">
-                <div class="container footer__bar-container">
-                    <p class="footer__copyright">© Remix 2021</p>
-                    <a
-                        href="mailto:support@remix.com"
-                        class="link link--on-accent footer__mail"
-                        >support@remix.com</a
-                    >
-                    <a href="#" rel="noopener noreferrer" class="link link--on-accent footer__twitter">
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="footer__icon"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M0 12C0 5.3726 5.3726 0 12 0C18.6274 0 24 5.3726 24 12C24 18.6274 18.6274 24 12 24C5.3726 24 0 18.6274 0 12ZM11.6406 9.75375L11.6658 10.169L11.2461 10.1181C9.71845 9.92325 8.38385 9.26225 7.25065 8.15215L6.6967 7.60135L6.554 8.0081C6.2518 8.9148 6.44485 9.8724 7.0744 10.5164C7.41015 10.8723 7.3346 10.9232 6.75545 10.7113C6.554 10.6435 6.3777 10.5927 6.36095 10.6181C6.3022 10.6774 6.5036 11.4486 6.6631 11.7536C6.88135 12.1773 7.3262 12.5925 7.81305 12.8383L8.22435 13.0332L7.7375 13.0416C7.26745 13.0416 7.25065 13.0501 7.30105 13.2281C7.4689 13.7789 8.132 14.3636 8.87065 14.6179L9.3911 14.7958L8.9378 15.0669C8.2663 15.4567 7.4773 15.6771 6.6883 15.694C6.31055 15.7025 6 15.7364 6 15.7619C6 15.8465 7.02405 16.3211 7.62 16.5075C9.40785 17.0583 11.5315 16.8211 13.1263 15.8805C14.2594 15.211 15.3926 13.8806 15.9214 12.5926C16.2068 11.9061 16.4922 10.652 16.4922 10.0504C16.4922 9.66055 16.5173 9.6097 16.9874 9.1436C17.2644 8.87245 17.5246 8.57585 17.575 8.4911C17.6589 8.3301 17.6506 8.3301 17.2225 8.47415C16.509 8.7284 16.4082 8.6945 16.7608 8.31315C17.021 8.042 17.3316 7.5505 17.3316 7.40645C17.3316 7.381 17.2057 7.4234 17.063 7.49965C16.9119 7.5844 16.5762 7.7115 16.3243 7.7878L15.871 7.93185L15.4598 7.6522C15.2332 7.49965 14.9141 7.3302 14.7463 7.27935C14.3182 7.1607 13.6635 7.17765 13.2774 7.31325C12.2282 7.69455 11.5651 8.67755 11.6406 9.75375Z"
-                                fill="#F7CA18"
-                                class="footer__icon-path"
-                            />
-                        </svg>
-                    </a>
-                    <a href="#" rel="noopener noreferrer" class="link link--on-accent footer__facebook">
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="footer__icon"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M0 12C0 5.3726 5.3726 0 12 0C18.6274 0 24 5.3726 24 12C24 18.6274 18.6274 24 12 24C5.3726 24 0 18.6274 0 12ZM13.2508 19.0557V12.5271H15.0529L15.2918 10.2773H13.2508L13.2538 9.15125C13.2538 8.56445 13.3096 8.25005 14.1524 8.25005H15.279V6H13.4766C11.3116 6 10.5496 7.0914 10.5496 8.9268V10.2775H9.2V12.5274H10.5496V19.0557H13.2508Z"
-                                fill="#F7CA18"
-                                class="footer__icon-path"
-                            />
-                        </svg>
-                    </a>
+        </section>
+        <section class="testimonials">
+            <div class="container testimonials__container">
+                <div class="testimonials__cta">
+                    <h2 class="testimonials__heading">
+                        What our users say
+                    </h2>
+                    <p class="testimonials__desc">
+                        We have cultivated a growing community for
+                        developers, and that matters to us. See what our
+                        users are saying.
+                    </p>
+                    <p class="testimonials__rating">
+                        <span class="testimonials__score">5.0</span>
+                        Rating<span class="star star--mid testimonials__star"></span>
+                    </p>
+                    <p class="testimonials__users">
+                        <span class="testimonials__users-count">2400+
+                        </span>
+                        Developers
+                        <img src="./assets/images/user-avatar-six.png" alt="User avatar" loading="lazy"
+                            class="testimonials__avatar" />
+                        <img src="./assets/images/user-avatar-five.png" alt="User avatar" loading="lazy"
+                            class="testimonials__avatar" />
+                        <img src="./assets/images/user-avatar-four.png" alt="User avatar" loading="lazy"
+                            class="testimonials__avatar" />
+                        <img src="./assets/images/user-avatar-three.png" alt="User avatar" loading="lazy"
+                            class="testimonials__avatar" />
+                        <img src="./assets/images/user-avatar-two.png" alt="User avatar" loading="lazy"
+                            class="testimonials__avatar" />
+                        <img src="./assets/images/user-avatar-one.png" alt="User avatar" loading="lazy"
+                            class="testimonials__avatar" />
+                    </p>
                 </div>
+                <div class="testimonials__items">
+                    <article class="testimonial">
+                        <img src="./assets/images/testimonial-avatar-one.png" loading="lazy" alt="Reviewer avatar"
+                            class="testimonial__avatar" />
+                        <blockquote class="testimonial__review">
+                            Developers, you no longer need to spend hours
+                            translating designs.
+                        </blockquote>
+                        <h6 class="testimonial__author">Jesse Hendricks</h6>
+                        <span class="testimonial__rating">
+                            <span class="star star--small testimonials__star"></span>
+                            <span class="star star--small testimonials__star"></span>
+                            <span class="star star--small testimonials__star"></span>
+                            <span class="star star--small testimonials__star"></span>
+                            <span class="star star--small testimonials__star"></span>
+                        </span>
+                    </article>
+                    <article class="testimonial">
+                        <img src="./assets/images/testimonial-avatar-two.png" loading="lazy" alt="Reviewer avatar"
+                            class="testimonial__avatar" />
+                        <blockquote class="testimonial__review">
+                            Remix has been a life saver when it comes to
+                            developer hand off.
+                        </blockquote>
+                        <h6 class="testimonial__author">Mia andrews</h6>
+                        <span class="testimonial__rating">
+                            <span class="star star--small testimonials__star"></span>
+                            <span class="star star--small testimonials__star"></span>
+                            <span class="star star--small testimonials__star"></span>
+                            <span class="star star--small testimonials__star"></span>
+                            <span class="star star--small testimonials__star"></span>
+                        </span>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="guide">
+            <div class="container guide__container">
+                <div class="guide__content">
+                    <h2 class="guide__heading">
+                        Get the Ultimate Developer Hand Off Guide
+                    </h2>
+                    <p class="guide__desc on-accent">
+                        A guide with 120+ hours worth of content to guide
+                        you on how to perfectly hand over your designs to
+                        your developers. Best part? It’s completely free.
+                    </p>
+                    <form action="#" class="guide__form">
+                        <label for="guide__email" class="guide__form-label">Email:</label>
+                        <input type="email" name="guide__form-email" id="guide__form-email"
+                            placeholder="Enter email address" class="input input--email guide__form-email" required />
+                        <button type="submit" class="guide__submit btn btn--dark">
+                            Send me the guide
+                        </button>
+                    </form>
+                </div>
+                <div class="guide__ilustration"></div>
+            </div>
+        </section>
+        <section class="subscription">
+            <div class="container subscription__container">
+                <article class="subscription__item">
+                    <h6 class="subscription__heading">Basic</h6>
+                    <p class="subscription__price">
+                        $39<sub class="subscription__price--period">/mo</sub>
+                    </p>
+                    <p class="subscription__desc">
+                        Suited for small teams with minimal developer
+                        handoffs.
+                    </p>
+                    <ul class="subscription__features">
+                        <li class="subscription__feature">
+                            Web access only.
+                        </li>
+                        <li class="subscription__feature">
+                            20 Handoffs per month.
+                        </li>
+                        <li class="subscription__feature">2 members.</li>
+                        <li class="subscription__feature">
+                            Offline editing only.
+                        </li>
+                    </ul>
+                    <button class="subscription__btn btn btn--accent">
+                        Subscribe
+                    </button>
+                </article>
+                <article class="subscription__item subscription__item--highlighted">
+                    <h6 class="subscription__heading">Starter</h6>
+                    <p class="subscription__price">
+                        $59<sub class="subscription__price--period">/mo</sub>
+                    </p>
+                    <p class="subscription__desc">
+                        Suited for medium businesses with a lot of handoffs.
+                    </p>
+                    <ul class="subscription__features">
+                        <li class="subscription__feature">
+                            Web & Figma Plugin.
+                        </li>
+                        <li class="subscription__feature">
+                            60 Handoffs per month.
+                        </li>
+                        <li class="subscription__feature">4 members.</li>
+                        <li class="subscription__feature">Live editing.</li>
+                    </ul>
+                    <button class="subscription__btn btn btn--accent">
+                        Subscribe
+                    </button>
+                </article>
+                <article class="subscription__item">
+                    <h6 class="subscription__heading">Pro</h6>
+                    <p class="subscription__price">
+                        $129<sub class="subscription__price--period">/mo</sub>
+                    </p>
+                    <p class="subscription__desc">
+                        Suited for enterprises with daily developer
+                        handoffs.
+                    </p>
+                    <ul class="subscription__features">
+                        <li class="subscription__feature">
+                            Web & Figma Plugin.
+                        </li>
+                        <li class="subscription__feature">
+                            500+ Handoffs per month.
+                        </li>
+                        <li class="subscription__feature">
+                            Unlimited members.
+                        </li>
+                        <li class="subscription__feature">Live editing.</li>
+                    </ul>
+                    <button class="subscription__btn btn btn--accent">
+                        Subscribe
+                    </button>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer__container">
+            <section class="footer__text">
+                <h5 class="footer__title">Remix</h5>
+                <p class="footer__desc on-accent">
+                    Remix is a Figma and Sketch plugin that was made with
+                    Developers in mind. Create custom React components in
+                    seconds, copy CSS code in one click, and export your
+                    assets effortlessly.
+                </p>
             </section>
-        </footer>
-        <script type="module" src="./assets/js/main.js"></script>
-    </body>
+            <section class="footer__links">
+                <ul class="footer__links-column footer__support">
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Supported</a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Sketch</a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Figma</a>
+                    </li>
+                </ul>
+                <ul class="footer__links-column footer__development">
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Developers</a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">API</a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Documentation</a>
+                    </li>
+                </ul>
+                <ul class="footer__links-column footer__company">
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Company</a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Career</a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Support</a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#" class="footer__anchor link link--on-accent">Culture</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <section class="footer__bar">
+            <div class="container footer__bar-container">
+                <p class="footer__copyright">© Remix 2021</p>
+                <a href="mailto:support@remix.com" class="link link--on-accent footer__mail">support@remix.com</a>
+                <a href="#" rel="noopener noreferrer" class="link link--on-accent footer__twitter">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="footer__icon">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 12C0 5.3726 5.3726 0 12 0C18.6274 0 24 5.3726 24 12C24 18.6274 18.6274 24 12 24C5.3726 24 0 18.6274 0 12ZM11.6406 9.75375L11.6658 10.169L11.2461 10.1181C9.71845 9.92325 8.38385 9.26225 7.25065 8.15215L6.6967 7.60135L6.554 8.0081C6.2518 8.9148 6.44485 9.8724 7.0744 10.5164C7.41015 10.8723 7.3346 10.9232 6.75545 10.7113C6.554 10.6435 6.3777 10.5927 6.36095 10.6181C6.3022 10.6774 6.5036 11.4486 6.6631 11.7536C6.88135 12.1773 7.3262 12.5925 7.81305 12.8383L8.22435 13.0332L7.7375 13.0416C7.26745 13.0416 7.25065 13.0501 7.30105 13.2281C7.4689 13.7789 8.132 14.3636 8.87065 14.6179L9.3911 14.7958L8.9378 15.0669C8.2663 15.4567 7.4773 15.6771 6.6883 15.694C6.31055 15.7025 6 15.7364 6 15.7619C6 15.8465 7.02405 16.3211 7.62 16.5075C9.40785 17.0583 11.5315 16.8211 13.1263 15.8805C14.2594 15.211 15.3926 13.8806 15.9214 12.5926C16.2068 11.9061 16.4922 10.652 16.4922 10.0504C16.4922 9.66055 16.5173 9.6097 16.9874 9.1436C17.2644 8.87245 17.5246 8.57585 17.575 8.4911C17.6589 8.3301 17.6506 8.3301 17.2225 8.47415C16.509 8.7284 16.4082 8.6945 16.7608 8.31315C17.021 8.042 17.3316 7.5505 17.3316 7.40645C17.3316 7.381 17.2057 7.4234 17.063 7.49965C16.9119 7.5844 16.5762 7.7115 16.3243 7.7878L15.871 7.93185L15.4598 7.6522C15.2332 7.49965 14.9141 7.3302 14.7463 7.27935C14.3182 7.1607 13.6635 7.17765 13.2774 7.31325C12.2282 7.69455 11.5651 8.67755 11.6406 9.75375Z"
+                            fill="#F7CA18" class="footer__icon-path" />
+                    </svg>
+                </a>
+                <a href="#" rel="noopener noreferrer" class="link link--on-accent footer__facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="footer__icon">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 12C0 5.3726 5.3726 0 12 0C18.6274 0 24 5.3726 24 12C24 18.6274 18.6274 24 12 24C5.3726 24 0 18.6274 0 12ZM13.2508 19.0557V12.5271H15.0529L15.2918 10.2773H13.2508L13.2538 9.15125C13.2538 8.56445 13.3096 8.25005 14.1524 8.25005H15.279V6H13.4766C11.3116 6 10.5496 7.0914 10.5496 8.9268V10.2775H9.2V12.5274H10.5496V19.0557H13.2508Z"
+                            fill="#F7CA18" class="footer__icon-path" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </footer>
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
 </html>

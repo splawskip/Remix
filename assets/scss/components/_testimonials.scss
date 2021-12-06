@@ -46,9 +46,7 @@
 
         &:hover {
             .testimonials__avatar {
-                &:not(:first-of-type) {
-                    margin: 0 2.5px;
-                }
+                margin: 0 2.5px;
             }
         }
     }

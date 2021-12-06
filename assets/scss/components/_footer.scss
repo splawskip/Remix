@@ -72,6 +72,13 @@
         }
     }
 
+    &__anchor {
+        font-family: 'Inter', sans-serif;
+        font-size: .9rem;
+        line-height: 1.35rem;
+        color: var(--clr-alternative);
+    }
+
     &__bar {
         display: grid;
         place-items: center;
